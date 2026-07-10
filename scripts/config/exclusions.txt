@@ -1,0 +1,16 @@
+# scripts/config/exclusions.txt
+# Shared exclusion config for folio count/staleness validators.
+# Consumed via folio_exclusions / folio_is_excluded in scripts/lib/schema.sh.
+#
+# Format (one entry per line; same schema as craft's exclusions.txt):
+#   filepath            — exclude entire file from all checks
+#   filepath:pattern    — exclude specific pattern matches in that file
+#                         (e.g. "docs/CHANGELOG.md:12 commands" skips that one
+#                         historical count while the rest of the file is scanned)
+#   dir/                — exclude entire directory (trailing slash)
+#   # comment           — ignored
+#   blank lines         — ignored
+#
+# Currently empty: folio's surface is 0 commands / 0 agents / 0 skills, so
+# there are no historical snapshots or curated counts to exclude yet.
+# Phase 2 adds entries here as changelog/tutorial snapshots accumulate.
