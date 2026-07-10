@@ -468,7 +468,6 @@ sequenceDiagram
 - `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
 - `/folio:docs:check` - Documentation health check (links, staleness, navigation)
-- `/folio:docs:check-links` - Internal link validation for documentation
 - `/folio:docs:help` - Help page generator
 - `/folio:docs:lint` - Markdown quality and error detection with auto-fix
 - `/folio:docs:prompt` - Generate documentation prompts

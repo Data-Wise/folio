@@ -82,7 +82,9 @@ External links:
 Summary: 45 internal (1 critical, 1 expected), 12 external (1 broken)
 ```
 
-**Note**: Critical broken links cause exit code 1. Expected broken links (documented in `.linkcheck-ignore`) are shown as warnings but don't block CI. See `/folio:docs:check-links` for details on `.linkcheck-ignore` format.
+**Note**: Critical broken links cause exit code 1. Expected broken links (documented in
+`.linkcheck-ignore`) are shown as warnings but don't block CI — see ".linkcheck-ignore Support"
+below for the format.
 
 **Phase 2: Stale Detection**
 
@@ -328,6 +330,62 @@ STALE DOCS (2):
   - docs/reference/api.md (32 days)
 
 Exit code: 1
+```
+
+## .linkcheck-ignore Support
+
+Absorbed from the retired `/folio:docs:check-links` command (folded here 2026-07 — this file now
+owns the full links story; the standalone command was redundant with this one).
+
+Ignore expected broken links via a `.linkcheck-ignore` file in the project root — document known
+issues (test fixtures, gitignored brainstorm references) without them blocking CI.
+
+```markdown
+# Known Broken Links
+
+### Test Files (Intentional)
+File: `docs/test-violations.md`
+- Purpose: Test data for validation
+
+### Brainstorm References (Gitignored)
+Files with broken links:
+- `docs/specs/SPEC-feature-a.md`
+Targets: `docs/brainstorm/*.md` (gitignored)
+```
+
+| Pattern | Example | Matches |
+|---------|---------|---------|
+| Exact | `File: docs/test.md` | Exact file path only |
+| Glob | `Files: docs/specs/*.md` | All files matching pattern |
+| Any target | No `Target:` line | All broken links in file |
+| Specific target | `Target: ../README.md` | Only links to that target |
+| Glob target | `Targets: docs/brainstorm/*.md` | Links matching pattern |
+
+**Behavior:** broken link NOT in `.linkcheck-ignore` → critical (exit 1). Broken link IN the
+file → expected (warning, exit 0). File missing entirely → all broken links treated as critical.
+Paths normalize both absolute and relative forms; matching is case-sensitive.
+
+## Anchor Validation (heading-link checks)
+
+Headings are normalized for `#anchor` matching: lowercase, spaces → dashes, non-alphanumerics
+stripped (`"API Reference"` → `#api-reference`).
+
+```bash
+extract_headings() {
+  grep -E '^#{1,6} ' "$1" | sed 's/^#* //' | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | sed 's/[^a-z0-9-]//g'
+}
+```
+
+Cross-file (`file.md#heading`) and same-file (`#heading`) anchors both validated this way.
+
+## VS Code Integration (clickable output)
+
+`--verbose` output uses `file:line:col` format so broken-link lines are clickable in an
+integrated terminal:
+
+```
+docs/index.md:34:10: [Configuration](/docs/config.md) → File not found
+docs/guide/setup.md:15:5: [missing.md](missing.md) → File not found
 ```
 
 ## Flags Reference

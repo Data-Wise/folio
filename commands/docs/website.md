@@ -790,7 +790,6 @@ After this command works:
 
 - `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/folio:docs:check-links` - Internal link validation for documentation
 - `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
 - `/folio:docs:guide` - Orchestrated guide generator
 - `/folio:docs:help` - Help page generator

@@ -337,7 +337,6 @@ PROMPT-DOCS-EDIT-[filename].md # edit
 
 - `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/folio:docs:check` - Documentation health check (links, staleness, navigation)
-- `/folio:docs:check-links` - Internal link validation for documentation
 - `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
 - `/folio:docs:guide` - Orchestrated guide generator
 - `/folio:docs:help` - Help page generator

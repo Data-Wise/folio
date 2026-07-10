@@ -247,7 +247,6 @@ Generated help page follows this structure:
 
 - `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/folio:docs:check-links` - Internal link validation for documentation
 - `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
 - `/folio:docs:lint` - Markdown quality and error detection with auto-fix
 - `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure

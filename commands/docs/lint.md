@@ -739,7 +739,6 @@ docs/guide/setup.md:45:30: MD009 - Trailing spaces (auto-fixable)
 
 **Works with:**
 
-- `/folio:docs:check-links` - Link validation
 - `/craft:site:check` - Site validation (calls lint before build)
 - `/craft:ci:validate` - CI pipeline validation
 
@@ -855,7 +854,6 @@ npx markdownlint-cli2 --help
 
 ## See Also
 
-- `/folio:docs:check-links` - Documentation link validation
 - `/folio:docs:check` - Full documentation health check
 - `/craft:code:lint` - Code linting (delegates markdown here)
 - `/craft:site:check` - Site validation (includes lint step)
