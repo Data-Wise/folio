@@ -38,7 +38,7 @@ Detect the site framework before any operation:
 | `_pkgdown.yml` / `pkgdown/` | pkgdown (R) | `pkgdown::build_site()` | `pkgdown::preview_site()` | `pkgdown::deploy_to_branch()` |
 | Teaching profile (`docs/teach-config.yml`) | MkDocs + teaching mode | adds week/lecture rendering | — | adds draft→production workflow |
 
-For framework comparison / picking one, see reference: craft repo `commands/site/docs/frameworks.md` (long-form; stayed in craft — demoted reference, not moved to folio).
+For framework comparison / picking one, see reference: `references/frameworks.md` (long-form; demoted from a craft command to a skill reference on the folio split).
 
 ## Lifecycle Phases
 
@@ -270,7 +270,7 @@ Run after merging a feature PR, before the next release.
 
 ## Reference
 
-- Framework comparison: craft repo `commands/site/docs/frameworks.md`
+- Framework comparison: `references/frameworks.md`
 - Release pipeline integration: craft repo `skills/release/SKILL.md` (Step 9, Step 13a)
 - Navigation operations: `skills/docs/navigation/SKILL.md`
 - Doc impact classification: `skills/docs/doc-classifier/SKILL.md`
