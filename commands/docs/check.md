@@ -486,7 +486,7 @@ docs/guide/setup.md:15:5: [missing.md](missing.md) → File not found
 - `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
 - `/folio:docs:help` - Help page generator
 - `/folio:docs:lint` - Markdown quality and error detection with auto-fix
-- `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
+- `nav-sync` skill - Update mkdocs.yml navigation from directory structure (auto-activates; see `skills/docs/navigation/`)
 - `/folio:docs:prompt` - Generate documentation prompts
 - `/folio:docs:quickstart` - Quick start generator
 - `/folio:docs:site` - Website documentation focus

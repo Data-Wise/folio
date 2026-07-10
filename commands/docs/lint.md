@@ -863,7 +863,7 @@ npx markdownlint-cli2 --help
 - `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
 - `/folio:docs:guide` - Orchestrated guide generator
 - `/folio:docs:help` - Help page generator
-- `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
+- `nav-sync` skill - Update mkdocs.yml navigation from directory structure (auto-activates; see `skills/docs/navigation/`)
 - `/folio:docs:prompt` - Generate documentation prompts
 - `/folio:docs:quickstart` - Quick start generator
 - `/folio:docs:site` - Website documentation focus

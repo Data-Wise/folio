@@ -300,7 +300,7 @@ export default {
 
 This command focuses on **website docs only**. It:
 
-- Calls `/craft:docs:nav-update` for navigation
+- Calls the `nav-sync` skill for navigation
 - Calls `/craft:docs:validate` for link checking
 - Calls `/craft:site:deploy` for deployment (if --deploy)
 

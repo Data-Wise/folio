@@ -325,7 +325,7 @@ Add to mkdocs.yml:
 │ Phase 6/7: UPDATING NAVIGATION                               │
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
-│ Running /craft:docs:nav-update...                            │
+│ Running nav-sync skill...                                    │
 │                                                              │
 │ ✓ Added: guide/sessions.md → "Session Coordination"          │
 │ ✓ Added: reference/REFCARD-SESSIONS.md → "Sessions Refcard"  │
@@ -435,7 +435,7 @@ sequenceDiagram
 - `/craft:docs:analyze` - Feature classification
 - `/folio:docs:demo` - VHS tape generation
 - `/folio:docs:mermaid` - Diagram templates
-- `/craft:docs:nav-update` - Navigation updates
+- `nav-sync` skill - Navigation updates
 
 **Uses these agents:**
 
