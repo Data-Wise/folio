@@ -1,0 +1,170 @@
+name: Homebrew Release
+
+# Mirrors craft's homebrew-release.yml (parameterized: craft -> folio).
+# See craft/.github/workflows/homebrew-release.yml for the pattern this was
+# adapted from; keep both in sync if the pattern changes upstream.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., 1.0.0)'
+        required: true
+        type: string
+
+jobs:
+  validate:
+    name: Pre-Release Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Determine version
+        id: version
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_VERSION: ${{ github.event.inputs.version }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            VERSION="$INPUT_VERSION"
+          else
+            VERSION="${GITHUB_REF#refs/tags/}"
+            VERSION="${VERSION#v}"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Validate release consistency
+        env:
+          RELEASE_VERSION: ${{ steps.version.outputs.version }}
+        run: ./scripts/pre-release-check.sh "$RELEASE_VERSION"
+
+  prepare:
+    name: Prepare Release Info
+    needs: validate
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.release.outputs.version }}
+      sha256: ${{ steps.release.outputs.sha256 }}
+      command_count: ${{ steps.metadata.outputs.command_count }}
+      agent_count: ${{ steps.metadata.outputs.agent_count }}
+      skill_count: ${{ steps.metadata.outputs.skill_count }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Get version and calculate SHA
+        id: release
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_VERSION: ${{ github.event.inputs.version }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            VERSION="$INPUT_VERSION"
+          else
+            VERSION="${GITHUB_REF#refs/tags/}"
+            VERSION="${VERSION#v}"
+          fi
+
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+          TARBALL_URL="https://github.com/Data-Wise/folio/archive/refs/tags/v${VERSION}.tar.gz"
+          SHA256=$(curl -sL --retry 3 --retry-delay 2 "$TARBALL_URL" | sha256sum | cut -d' ' -f1)
+
+          if [ -z "$SHA256" ] || [ ${#SHA256} -ne 64 ]; then
+            echo "::error::SHA256 calculation failed. Got: '$SHA256'"
+            exit 1
+          fi
+
+          echo "sha256=$SHA256" >> $GITHUB_OUTPUT
+          echo "Version: $VERSION"
+          echo "SHA256: $SHA256"
+
+      - name: Extract plugin metadata
+        id: metadata
+        run: |
+          CMD_COUNT=$(find commands -name "*.md" ! -name "index.md" ! -name "README.md" | wc -l | tr -d ' ')
+          AGENT_COUNT=$(find agents -name "*.md" | wc -l | tr -d ' ')
+          SKILL_COUNT=$(find skills -name "SKILL.md" | wc -l | tr -d ' ')
+          echo "command_count=$CMD_COUNT" >> $GITHUB_OUTPUT
+          echo "agent_count=$AGENT_COUNT" >> $GITHUB_OUTPUT
+          echo "skill_count=$SKILL_COUNT" >> $GITHUB_OUTPUT
+          echo "Metadata: $CMD_COUNT commands, $AGENT_COUNT agents, $SKILL_COUNT skills"
+
+  update-homebrew:
+    name: Update Homebrew Formula
+    needs: prepare
+    runs-on: ubuntu-latest
+    # GitHub App auth (APP_ID + APP_PRIVATE_KEY, set up in T1.6) mints a
+    # short-lived cross-repo token — same pattern as craft's, see issue #129
+    # there for why this replaced an expiring-PAT approach.
+    steps:
+      - name: Mint GitHub App token (for cross-repo push to homebrew-tap)
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: Data-Wise
+          repositories: homebrew-tap
+
+      - name: Checkout homebrew-tap
+        uses: actions/checkout@v5
+        with:
+          repository: Data-Wise/homebrew-tap
+          token: ${{ steps.app-token.outputs.token }}
+          path: homebrew-tap
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Update manifest and regenerate folio formula
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+          SHA256: ${{ needs.prepare.outputs.sha256 }}
+          CMD_COUNT: ${{ needs.prepare.outputs.command_count }}
+        working-directory: homebrew-tap
+        run: |
+          python3 - <<'PY'
+          import json, os
+          m = json.load(open('generator/manifest.json'))
+          formulas = m.get('formulas', m)
+          folio = formulas['folio']
+          folio['version'] = os.environ['VERSION']
+          folio['sha256'] = os.environ['SHA256']
+          folio['desc'] = "Docs-authoring toolkit for Claude Code"
+          folio['command_count'] = int(os.environ['CMD_COUNT'])
+          folio.pop('_placeholder_note', None)
+          with open('generator/manifest.json', 'w') as f:
+              json.dump(m, f, indent=2)
+              f.write('\n')
+          print(f"manifest updated: folio -> v{folio['version']}")
+          PY
+          python3 generator/generate.py folio
+          ruby -c Formula/folio.rb
+
+      - name: Commit and push to tap
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+        working-directory: homebrew-tap
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Formula/folio.rb generator/manifest.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit (formula already at v${VERSION})"
+            exit 0
+          fi
+          git commit -m "folio: update to v${VERSION}"
+          git push origin main
