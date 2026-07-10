@@ -108,4 +108,4 @@ For R demos, prefer running snippets through `r_execute` / `r_plot` to verify th
 
 - `test-strategist` — for coverage analysis (NOT this skill's concern)
 - `scholar:teaching:slides` — for slide decks (this skill produces the code, not the slides)
-- `/craft:docs:demo` — terminal recording / GIF generation for finished demos
+- `/folio:docs:demo` — terminal recording / GIF generation for finished demos

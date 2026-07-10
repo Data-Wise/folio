@@ -1,11 +1,11 @@
 ---
-description: "/craft:docs:tutorial - Interactive Tutorial Generator"
+description: "/folio:docs:tutorial - Interactive Tutorial Generator"
 category: docs
 ---
 
-# /craft:docs:tutorial - Interactive Tutorial Generator
+# /folio:docs:tutorial - Interactive Tutorial Generator
 
-> Also reachable via `/craft:docs:generate tutorial` (unified router across all 9 doc generators).
+> Also reachable via `/folio:docs:generate tutorial` (unified router across all 9 doc generators).
 
 You are a tutorial orchestrator. Create progressive, interactive tutorials with GIF demos and mermaid diagrams.
 
@@ -23,11 +23,11 @@ You are a tutorial orchestrator. Create progressive, interactive tutorials with 
 ## Usage
 
 ```bash
-/craft:docs:tutorial "getting-started"     # Generate tutorial for level
-/craft:docs:tutorial "feature-name"        # Generate tutorial for feature
-/craft:docs:tutorial --list                # Show available tutorial templates
-/craft:docs:tutorial --analyze             # Analyze project for tutorial opportunities
-/craft:docs:tutorial --dry-run             # Preview without writing
+/folio:docs:tutorial "getting-started"     # Generate tutorial for level
+/folio:docs:tutorial "feature-name"        # Generate tutorial for feature
+/folio:docs:tutorial --list                # Show available tutorial templates
+/folio:docs:tutorial --analyze             # Analyze project for tutorial opportunities
+/folio:docs:tutorial --dry-run             # Preview without writing
 ```
 
 ## Arguments
@@ -268,29 +268,29 @@ docs/
 ### Generate Getting Started Tutorial
 
 ```bash
-/craft:docs:tutorial getting-started --with-gifs --with-diagrams
+/folio:docs:tutorial getting-started --with-gifs --with-diagrams
 ```
 
 ### Analyze Project for Tutorial Opportunities
 
 ```bash
-/craft:docs:tutorial --analyze
+/folio:docs:tutorial --analyze
 ```
 
 ### Generate All Three Levels
 
 ```bash
-/craft:docs:tutorial all --with-gifs
+/folio:docs:tutorial all --with-gifs
 ```
 
 ## Integration
 
 This skill works with:
 
-- `/craft:docs:demo` - VHS tape generation
-- `/craft:docs:mermaid` - Diagram templates
-- `/craft:docs:guide` - Feature guide generation
-- `/craft:docs:sync` - Navigation updates
+- `/folio:docs:demo` - VHS tape generation
+- `/folio:docs:mermaid` - Diagram templates
+- `/folio:docs:guide` - Feature guide generation
+- `/folio:docs:sync` - Navigation updates
 
 ## Best Practices
 
@@ -311,15 +311,15 @@ This skill works with:
 
 ## See Also
 
-- `/craft:docs:api` - OpenAPI/Swagger documentation generator
+- `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/craft:docs:check` - Documentation health check (links, staleness, navigation)
-- `/craft:docs:check-links` - Internal link validation for documentation
-- `/craft:docs:help` - Help page generator
-- `/craft:docs:lint` - Markdown quality and error detection with auto-fix
+- `/folio:docs:check` - Documentation health check (links, staleness, navigation)
+- `/folio:docs:check-links` - Internal link validation for documentation
+- `/folio:docs:help` - Help page generator
+- `/folio:docs:lint` - Markdown quality and error detection with auto-fix
 - `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
-- `/craft:docs:prompt` - Generate documentation prompts
-- `/craft:docs:quickstart` - Quick start generator
-- `/craft:docs:site` - Website documentation focus
-- `/craft:docs:website` - ADHD-friendly website enhancement
-- `/craft:docs:workflow` - Workflow documentation generator
+- `/folio:docs:prompt` - Generate documentation prompts
+- `/folio:docs:quickstart` - Quick start generator
+- `/folio:docs:site` - Website documentation focus
+- `/folio:docs:website` - ADHD-friendly website enhancement
+- `/folio:docs:workflow` - Workflow documentation generator

@@ -1,11 +1,11 @@
 ---
-description: "/craft:docs:help - Help Page Generator"
+description: "/folio:docs:help - Help Page Generator"
 category: docs
 ---
 
-# /craft:docs:help - Help Page Generator
+# /folio:docs:help - Help Page Generator
 
-> Also reachable via `/craft:docs:generate help` (unified router across all 9 doc generators).
+> Also reachable via `/folio:docs:generate help` (unified router across all 9 doc generators).
 
 Generate comprehensive help documentation for commands using ADHD-friendly templates.
 
@@ -22,18 +22,18 @@ Generate comprehensive help documentation for commands using ADHD-friendly templ
 
 ```bash
 # Generate help for a specific command
-/craft:docs:help "check"              # Document /craft:check
-/craft:docs:help "docs:update"        # Document /craft:docs:update
-/craft:docs:help "git:worktree"       # Document /craft:git:worktree
+/folio:docs:help "check"              # Document /craft:check
+/folio:docs:help "docs:update"        # Document /craft:docs:update
+/folio:docs:help "git:worktree"       # Document /craft:git:worktree
 
 # Generate help for multiple commands
-/craft:docs:help "docs:*"             # All docs commands
-/craft:docs:help "git:*"              # All git commands
+/folio:docs:help "docs:*"             # All docs commands
+/folio:docs:help "git:*"              # All git commands
 
 # Options
-/craft:docs:help "check" --output docs/help/   # Custom output path
-/craft:docs:help "check" --format terminal     # Preview in terminal
-/craft:docs:help "check" --dry-run             # Show plan only
+/folio:docs:help "check" --output docs/help/   # Custom output path
+/folio:docs:help "check" --format terminal     # Preview in terminal
+/folio:docs:help "check" --dry-run             # Show plan only
 ```
 
 ## When Invoked
@@ -245,15 +245,15 @@ Generated help page follows this structure:
 
 ## See Also
 
-- `/craft:docs:api` - OpenAPI/Swagger documentation generator
+- `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/craft:docs:check-links` - Internal link validation for documentation
-- `/craft:docs:demo` - Terminal recording and GIF generator with dependency management
-- `/craft:docs:lint` - Markdown quality and error detection with auto-fix
+- `/folio:docs:check-links` - Internal link validation for documentation
+- `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
+- `/folio:docs:lint` - Markdown quality and error detection with auto-fix
 - `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
-- `/craft:docs:prompt` - Generate documentation prompts
-- `/craft:docs:quickstart` - Quick start generator
-- `/craft:docs:site` - Website documentation focus
-- `/craft:docs:tutorial` - Interactive tutorial generator
-- `/craft:docs:website` - ADHD-friendly website enhancement
-- `/craft:docs:workflow` - Workflow documentation generator
+- `/folio:docs:prompt` - Generate documentation prompts
+- `/folio:docs:quickstart` - Quick start generator
+- `/folio:docs:site` - Website documentation focus
+- `/folio:docs:tutorial` - Interactive tutorial generator
+- `/folio:docs:website` - ADHD-friendly website enhancement
+- `/folio:docs:workflow` - Workflow documentation generator

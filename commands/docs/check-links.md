@@ -16,7 +16,7 @@ arguments:
     alias: -n
 ---
 
-# /craft:docs:check-links - Documentation Link Validation
+# /folio:docs:check-links - Documentation Link Validation
 
 Validate internal links in documentation files to prevent broken references.
 
@@ -37,21 +37,21 @@ Validate internal links in documentation files to prevent broken references.
 
 ```bash
 # DEFAULT: Quick check of all docs
-/craft:docs:check-links
+/folio:docs:check-links
 
 # MODES: Different thoroughness levels
-/craft:docs:check-links default      # Quick check (< 10s)
-/craft:docs:check-links debug        # Verbose with context (< 120s)
-/craft:docs:check-links optimize     # Parallel checking (< 180s)
-/craft:docs:check-links release      # Comprehensive validation (< 300s)
+/folio:docs:check-links default      # Quick check (< 10s)
+/folio:docs:check-links debug        # Verbose with context (< 120s)
+/folio:docs:check-links optimize     # Parallel checking (< 180s)
+/folio:docs:check-links release      # Comprehensive validation (< 300s)
 
 # SPECIFIC PATH
-/craft:docs:check-links docs/guide/  # Check specific directory
-/craft:docs:check-links README.md    # Check specific file
+/folio:docs:check-links docs/guide/  # Check specific directory
+/folio:docs:check-links README.md    # Check specific file
 
 # DRY-RUN: Preview what will be checked
-/craft:docs:check-links --dry-run
-/craft:docs:check-links release -n
+/folio:docs:check-links --dry-run
+/folio:docs:check-links release -n
 ```
 
 ## Modes
@@ -254,7 +254,7 @@ Summary:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ /craft:docs:check-links (default mode)                      │
+│ /folio:docs:check-links (default mode)                      │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │ ✓ Checked: 45 internal links in 54 files                    │
@@ -429,7 +429,7 @@ validate_anchor() {
 ### Release Mode Dry-Run
 
 ```bash
-/craft:docs:check-links release --dry-run
+/folio:docs:check-links release --dry-run
 ```
 
 ```
@@ -498,7 +498,7 @@ validate_anchor() {
 
 **Works with:**
 
-- `/craft:docs:lint` - Markdown quality checks
+- `/folio:docs:lint` - Markdown quality checks
 - `/craft:ci:validate` - CI pipeline validation
 
 ## CI Pipeline Usage
@@ -507,7 +507,7 @@ validate_anchor() {
 # .github/workflows/docs-quality.yml
 - name: Check Documentation Links
   run: |
-    claude "/craft:docs:check-links"
+    claude "/folio:docs:check-links"
     # Exit code 1 if broken links found
 ```
 
@@ -515,23 +515,23 @@ validate_anchor() {
 
 ```bash
 # Quick check before commit
-/craft:docs:check-links
+/folio:docs:check-links
 # → Fast, internal links only
 
 # Debug broken link
-/craft:docs:check-links debug
+/folio:docs:check-links debug
 # → Verbose with context and suggestions
 
 # Release validation
-/craft:docs:check-links release
+/folio:docs:check-links release
 # → Comprehensive with anchors
 
 # Specific file
-/craft:docs:check-links README.md
+/folio:docs:check-links README.md
 # → Check just one file
 
 # Preview without executing
-/craft:docs:check-links --dry-run
+/folio:docs:check-links --dry-run
 # → Shows what will be checked
 ```
 
@@ -547,7 +547,7 @@ validate_anchor() {
 **Optimization Tips:**
 
 - Use `optimize` mode for large doc sets (100+ files)
-- Use specific paths for quick checks: `/craft:docs:check-links docs/guide/`
+- Use specific paths for quick checks: `/folio:docs:check-links docs/guide/`
 - Default mode skips anchors for speed
 
 ## Troubleshooting
@@ -564,7 +564,7 @@ ls -la docs/guide/  # Verify exact filename
 pwd  # Ensure you're in repo root
 
 # Try absolute path
-/craft:docs:check-links /full/path/to/docs/
+/folio:docs:check-links /full/path/to/docs/
 ```
 
 ### Performance Issues
@@ -573,10 +573,10 @@ pwd  # Ensure you're in repo root
 
 ```bash
 # Use optimize mode (parallel)
-/craft:docs:check-links optimize
+/folio:docs:check-links optimize
 
 # Or check specific directory
-/craft:docs:check-links docs/guide/
+/folio:docs:check-links docs/guide/
 ```
 
 ### Anchor Validation Errors
@@ -589,7 +589,7 @@ pwd  # Ensure you're in repo root
 # "API Reference" → #api-reference
 
 # Debug mode shows normalized anchor
-/craft:docs:check-links debug release
+/folio:docs:check-links debug release
 ```
 
 ## .linkcheck-ignore Support (NEW)
@@ -674,18 +674,18 @@ When `.linkcheck-ignore` is missing:
 # .github/workflows/docs-quality.yml
 - name: Check Documentation Links
   run: |
-    claude "/craft:docs:check-links"
+    claude "/folio:docs:check-links"
     # Only fails on critical broken links
     # Expected links (in .linkcheck-ignore) don't block CI
 ```
 
 ### Creating .linkcheck-ignore
 
-1. Run link check: `/craft:docs:check-links`
+1. Run link check: `/folio:docs:check-links`
 2. Review broken links output
 3. Create `.linkcheck-ignore` in project root
 4. Add categories and patterns for expected broken links
-5. Re-run to verify: `/craft:docs:check-links`
+5. Re-run to verify: `/folio:docs:check-links`
 
 ### Path Normalization
 
@@ -697,20 +697,20 @@ The parser automatically normalizes paths:
 
 ## See Also
 
-- `/craft:docs:lint` - Markdown style and quality checks
-- `/craft:docs:check` - Full documentation health check
+- `/folio:docs:lint` - Markdown style and quality checks
+- `/folio:docs:check` - Full documentation health check
 - `/craft:site:check` - Site validation (includes external links)
 - Template: `templates/dry-run-pattern.md`
 - `.linkcheck-ignore` - Ignore pattern file (create in project root)
-- `/craft:docs:api` - OpenAPI/Swagger documentation generator
+- `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/craft:docs:demo` - Terminal recording and GIF generator with dependency management
-- `/craft:docs:guide` - Orchestrated guide generator
-- `/craft:docs:help` - Help page generator
+- `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
+- `/folio:docs:guide` - Orchestrated guide generator
+- `/folio:docs:help` - Help page generator
 - `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
-- `/craft:docs:prompt` - Generate documentation prompts
-- `/craft:docs:quickstart` - Quick start generator
-- `/craft:docs:site` - Website documentation focus
-- `/craft:docs:tutorial` - Interactive tutorial generator
-- `/craft:docs:website` - ADHD-friendly website enhancement
-- `/craft:docs:workflow` - Workflow documentation generator
+- `/folio:docs:prompt` - Generate documentation prompts
+- `/folio:docs:quickstart` - Quick start generator
+- `/folio:docs:site` - Website documentation focus
+- `/folio:docs:tutorial` - Interactive tutorial generator
+- `/folio:docs:website` - ADHD-friendly website enhancement
+- `/folio:docs:workflow` - Workflow documentation generator

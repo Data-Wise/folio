@@ -1,11 +1,11 @@
 ---
-description: "/craft:docs:prompt - Generate Documentation Prompts"
+description: "/folio:docs:prompt - Generate Documentation Prompts"
 category: docs
 ---
 
-# /craft:docs:prompt - Generate Documentation Prompts
+# /folio:docs:prompt - Generate Documentation Prompts
 
-> Also reachable via `/craft:docs:generate prompt` (unified router across all 9 doc generators).
+> Also reachable via `/folio:docs:generate prompt` (unified router across all 9 doc generators).
 
 You are a prompt engineer specializing in documentation maintenance. Generate reusable prompts for common documentation tasks.
 
@@ -318,7 +318,7 @@ PROMPT-DOCS-EDIT-[filename].md # edit
 
 - `/craft:docs:update` - Update docs from code
 - `/craft:docs:changelog` - Update changelog
-- `/craft:docs:prompt` - Generate prompts ← this command
+- `/folio:docs:prompt` - Generate prompts ← this command
 
 **Works with site commands:**
 
@@ -335,16 +335,16 @@ PROMPT-DOCS-EDIT-[filename].md # edit
 
 ## See Also
 
-- `/craft:docs:api` - OpenAPI/Swagger documentation generator
-- `/craft:docs:check` - Documentation health check (links, staleness, navigation)
-- `/craft:docs:check-links` - Internal link validation for documentation
-- `/craft:docs:demo` - Terminal recording and GIF generator with dependency management
-- `/craft:docs:guide` - Orchestrated guide generator
-- `/craft:docs:help` - Help page generator
-- `/craft:docs:lint` - Markdown quality and error detection with auto-fix
+- `/folio:docs:api` - OpenAPI/Swagger documentation generator
+- `/folio:docs:check` - Documentation health check (links, staleness, navigation)
+- `/folio:docs:check-links` - Internal link validation for documentation
+- `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
+- `/folio:docs:guide` - Orchestrated guide generator
+- `/folio:docs:help` - Help page generator
+- `/folio:docs:lint` - Markdown quality and error detection with auto-fix
 - `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
-- `/craft:docs:quickstart` - Quick start generator
-- `/craft:docs:site` - Website documentation focus
-- `/craft:docs:tutorial` - Interactive tutorial generator
-- `/craft:docs:website` - ADHD-friendly website enhancement
-- `/craft:docs:workflow` - Workflow documentation generator
+- `/folio:docs:quickstart` - Quick start generator
+- `/folio:docs:site` - Website documentation focus
+- `/folio:docs:tutorial` - Interactive tutorial generator
+- `/folio:docs:website` - ADHD-friendly website enhancement
+- `/folio:docs:workflow` - Workflow documentation generator

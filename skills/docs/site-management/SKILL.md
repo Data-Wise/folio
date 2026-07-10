@@ -21,9 +21,9 @@ End-to-end management of a project's documentation site — from initial scaffol
 | Add a single page + sync nav | `skills/docs/navigation/` |
 | Reorganize `mkdocs.yml` nav tree | `skills/docs/navigation/` |
 | Classify what docs a feature needs | `skills/docs/doc-classifier/` |
-| Release pipeline (incl. `mkdocs gh-deploy`) | `skills/release/` (calls deploy as Step 9) |
-| Changelog generation | `skills/docs/changelog-automation/` |
-| CLAUDE.md lifecycle | `skills/docs/claude-md/` |
+| Release pipeline (incl. `mkdocs gh-deploy`) | craft repo: `skills/release/` (calls deploy as Step 9) |
+| Changelog generation | craft repo: `skills/docs/changelog-automation/` |
+| CLAUDE.md lifecycle | craft repo: `skills/docs/claude-md/` |
 
 **Overlap with `release` skill:** `release` invokes `mkdocs gh-deploy` as part of its full pipeline (Step 9). This skill handles deploy/publish **standalone** — when the user wants to ship docs changes without a version bump. If the user says "release v2.X" or "ship it", route to `release` instead.
 
@@ -38,7 +38,7 @@ Detect the site framework before any operation:
 | `_pkgdown.yml` / `pkgdown/` | pkgdown (R) | `pkgdown::build_site()` | `pkgdown::preview_site()` | `pkgdown::deploy_to_branch()` |
 | Teaching profile (`docs/teach-config.yml`) | MkDocs + teaching mode | adds week/lecture rendering | — | adds draft→production workflow |
 
-For framework comparison / picking one, see reference: `commands/site/docs/frameworks.md` (long-form).
+For framework comparison / picking one, see reference: craft repo `commands/site/docs/frameworks.md` (long-form; stayed in craft — demoted reference, not moved to folio).
 
 ## Lifecycle Phases
 
@@ -270,8 +270,8 @@ Run after merging a feature PR, before the next release.
 
 ## Reference
 
-- Framework comparison: `commands/site/docs/frameworks.md`
-- Release pipeline integration: `skills/release/SKILL.md` (Step 9, Step 13a)
+- Framework comparison: craft repo `commands/site/docs/frameworks.md`
+- Release pipeline integration: craft repo `skills/release/SKILL.md` (Step 9, Step 13a)
 - Navigation operations: `skills/docs/navigation/SKILL.md`
 - Doc impact classification: `skills/docs/doc-classifier/SKILL.md`
 

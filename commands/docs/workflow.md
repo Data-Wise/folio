@@ -1,11 +1,11 @@
 ---
-description: "/craft:docs:workflow - Workflow Documentation Generator"
+description: "/folio:docs:workflow - Workflow Documentation Generator"
 category: docs
 ---
 
-# /craft:docs:workflow - Workflow Documentation Generator
+# /folio:docs:workflow - Workflow Documentation Generator
 
-> Also reachable via `/craft:docs:generate workflow` (unified router across all 9 doc generators).
+> Also reachable via `/folio:docs:generate workflow` (unified router across all 9 doc generators).
 
 Generate task-focused workflow documentation for multi-step processes.
 
@@ -22,21 +22,21 @@ Generate task-focused workflow documentation for multi-step processes.
 
 ```bash
 # Generate workflow for a topic
-/craft:docs:workflow "git"            # Git workflow documentation
-/craft:docs:workflow "documentation"  # Docs workflow
-/craft:docs:workflow "release"        # Release process workflow
+/folio:docs:workflow "git"            # Git workflow documentation
+/folio:docs:workflow "documentation"  # Docs workflow
+/folio:docs:workflow "release"        # Release process workflow
 
 # From brainstorm specs (NEW - recommended)
-/craft:docs:workflow "auth" --from-spec   # Uses docs/specs/SPEC-auth-*.md
+/folio:docs:workflow "auth" --from-spec   # Uses docs/specs/SPEC-auth-*.md
 
 # From existing code patterns
-/craft:docs:workflow --detect         # Auto-detect workflows in codebase
-/craft:docs:workflow --from-commits   # Generate from recent commit patterns
+/folio:docs:workflow --detect         # Auto-detect workflows in codebase
+/folio:docs:workflow --from-commits   # Generate from recent commit patterns
 
 # Options
-/craft:docs:workflow "auth" --output docs/workflows/
-/craft:docs:workflow "auth" --format terminal
-/craft:docs:workflow "auth" --dry-run
+/folio:docs:workflow "auth" --output docs/workflows/
+/folio:docs:workflow "auth" --format terminal
+/folio:docs:workflow "auth" --dry-run
 ```
 
 ## Input Sources
@@ -78,7 +78,7 @@ When `--from-spec` is provided, the command:
 → Saves: docs/specs/SPEC-authentication-2026-01-14.md
 
 # Generate workflow from spec
-/craft:docs:workflow "authentication" --from-spec
+/folio:docs:workflow "authentication" --from-spec
 → Reads: docs/specs/SPEC-authentication-2026-01-14.md
 → Creates: docs/workflows/authentication-workflow.md
 ```
@@ -332,17 +332,17 @@ When using `--detect`, analyzes:
 
 ## See Also
 
-- `/craft:docs:api` - OpenAPI/Swagger documentation generator
+- `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/craft:docs:check` - Documentation health check (links, staleness, navigation)
-- `/craft:docs:check-links` - Internal link validation for documentation
-- `/craft:docs:demo` - Terminal recording and GIF generator with dependency management
-- `/craft:docs:guide` - Orchestrated guide generator
-- `/craft:docs:help` - Help page generator
-- `/craft:docs:lint` - Markdown quality and error detection with auto-fix
+- `/folio:docs:check` - Documentation health check (links, staleness, navigation)
+- `/folio:docs:check-links` - Internal link validation for documentation
+- `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
+- `/folio:docs:guide` - Orchestrated guide generator
+- `/folio:docs:help` - Help page generator
+- `/folio:docs:lint` - Markdown quality and error detection with auto-fix
 - `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
-- `/craft:docs:prompt` - Generate documentation prompts
-- `/craft:docs:quickstart` - Quick start generator
-- `/craft:docs:site` - Website documentation focus
-- `/craft:docs:tutorial` - Interactive tutorial generator
-- `/craft:docs:website` - ADHD-friendly website enhancement
+- `/folio:docs:prompt` - Generate documentation prompts
+- `/folio:docs:quickstart` - Quick start generator
+- `/folio:docs:site` - Website documentation focus
+- `/folio:docs:tutorial` - Interactive tutorial generator
+- `/folio:docs:website` - ADHD-friendly website enhancement

@@ -204,8 +204,8 @@ The agent knows how to integrate with GitHub Actions:
 
 This agent is invoked by:
 
-- `/craft:docs:demo` - Main VHS tape generator
-- `/craft:docs:guide` - When generating demo as part of guide
+- `/folio:docs:demo` - Main VHS tape generator
+- `/folio:docs:guide` - When generating demo as part of guide
 
 ## Related
 

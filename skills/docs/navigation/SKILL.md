@@ -11,7 +11,7 @@ Keep mkdocs.yml navigation aligned with the docs/ directory: detect drift, scaff
 
 This skill consolidates three previously separate commands:
 
-- `/craft:docs:nav-update` — directory-driven sync
+- `/craft:docs:nav-update` (deprecated in craft; consolidated into this skill) — directory-driven sync
 - `/craft:site:add` — new page + auto-nav
 - `/craft:site:nav` — reorganization (analyze, ADHD, apply, preview)
 
@@ -126,9 +126,9 @@ PAGE CREATED
 
 **Used by:**
 
-- `/craft:docs:check` — validates nav alignment as part of doc health.
+- `/folio:docs:check` — validates nav alignment as part of doc health.
 - `/craft:site:build` — should run sync before build to avoid missing-page warnings.
-- `/craft:docs:sync` — invokes nav-sync as a post-step after doc generation.
+- `/folio:docs:sync` — invokes nav-sync as a post-step after doc generation.
 
 ## Validation
 

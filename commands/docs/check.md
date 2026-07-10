@@ -13,7 +13,7 @@ arguments:
     alias: -n
 ---
 
-# /craft:docs:check - Documentation Health Check
+# /folio:docs:check - Documentation Health Check
 
 You are a documentation health checker. Validate, fix, and report on documentation status.
 
@@ -36,15 +36,15 @@ You are a documentation health checker. Validate, fix, and report on documentati
 
 ```bash
 # DEFAULT: Full check cycle (links + stale + nav + mermaid + auto-fix)
-/craft:docs:check
+/folio:docs:check
 
 # LIMIT SCOPE
-/craft:docs:check --report-only       # No auto-fix, just report
-/craft:docs:check --links-only        # Just broken links (fast)
-/craft:docs:check --no-stale          # Skip stale detection
+/folio:docs:check --report-only       # No auto-fix, just report
+/folio:docs:check --links-only        # Just broken links (fast)
+/folio:docs:check --no-stale          # Skip stale detection
 
 # CI MODE (use in pipelines)
-/craft:docs:check --report-only       # Safe for CI - no modifications
+/folio:docs:check --report-only       # Safe for CI - no modifications
 ```
 
 ## When Invoked
@@ -82,7 +82,7 @@ External links:
 Summary: 45 internal (1 critical, 1 expected), 12 external (1 broken)
 ```
 
-**Note**: Critical broken links cause exit code 1. Expected broken links (documented in `.linkcheck-ignore`) are shown as warnings but don't block CI. See `/craft:docs:check-links` for details on `.linkcheck-ignore` format.
+**Note**: Critical broken links cause exit code 1. Expected broken links (documented in `.linkcheck-ignore`) are shown as warnings but don't block CI. See `/folio:docs:check-links` for details on `.linkcheck-ignore` format.
 
 **Phase 2: Stale Detection**
 
@@ -200,7 +200,7 @@ python3 scripts/mermaid-validate.py docs/ --json
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ /craft:docs:check                                           │
+│ /folio:docs:check                                           │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │ ✓ Fixed: 2 broken links (auto-fixed)                        │
@@ -232,13 +232,13 @@ The `--deep` flag triggers Phases 6-9 of the staleness detection system, running
 
 ```bash
 # Run full check with deep staleness detection
-/craft:docs:check --deep
+/folio:docs:check --deep
 
 # Deep check in CI mode (no interactive prompts)
-/craft:docs:check --deep --report-only
+/folio:docs:check --deep --report-only
 
 # Deep check with auto-fix
-/craft:docs:check --deep --fix
+/folio:docs:check --deep --fix
 ```
 
 **Phases triggered by `--deep`:**
@@ -352,8 +352,8 @@ Exit code: 1
 
 **Works with:**
 
-- `/craft:docs:sync` - Detection pairs with check
-- `/craft:docs:guide` - Validate generated guides
+- `/folio:docs:sync` - Detection pairs with check
+- `/folio:docs:guide` - Validate generated guides
 - `/craft:ci:validate` - Part of CI pipeline
 - `/craft:site:deploy` - Health score gates deployment (>= 80)
 - `/craft:check --for release` - Includes mermaid health in pre-flight
@@ -365,26 +365,26 @@ Exit code: 1
 - name: Check Documentation
   run: |
     # Use --report-only in CI (no auto-modifications)
-    claude "/craft:docs:check --report-only"
+    claude "/folio:docs:check --report-only"
 ```
 
 ## Examples
 
 ```bash
 # Daily workflow: just run it
-/craft:docs:check
+/folio:docs:check
 # → Fixes what it can, reports the rest
 
 # Before PR: quick link check
-/craft:docs:check --links-only
+/folio:docs:check --links-only
 # → Fast, just broken links
 
 # CI pipeline: report only
-/craft:docs:check --report-only
+/folio:docs:check --report-only
 # → No changes, exit code for CI
 
 # Full report for review
-/craft:docs:check --report-only --verbose
+/folio:docs:check --report-only --verbose
 # → Detailed report, no changes
 ```
 
@@ -423,15 +423,15 @@ Exit code: 1
 
 - `/craft:site:check` - Site validation
 - Template: `templates/dry-run-pattern.md`
-- `/craft:docs:api` - OpenAPI/Swagger documentation generator
+- `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/craft:docs:demo` - Terminal recording and GIF generator with dependency management
-- `/craft:docs:help` - Help page generator
-- `/craft:docs:lint` - Markdown quality and error detection with auto-fix
+- `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
+- `/folio:docs:help` - Help page generator
+- `/folio:docs:lint` - Markdown quality and error detection with auto-fix
 - `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
-- `/craft:docs:prompt` - Generate documentation prompts
-- `/craft:docs:quickstart` - Quick start generator
-- `/craft:docs:site` - Website documentation focus
-- `/craft:docs:tutorial` - Interactive tutorial generator
-- `/craft:docs:website` - ADHD-friendly website enhancement
-- `/craft:docs:workflow` - Workflow documentation generator
+- `/folio:docs:prompt` - Generate documentation prompts
+- `/folio:docs:quickstart` - Quick start generator
+- `/folio:docs:site` - Website documentation focus
+- `/folio:docs:tutorial` - Interactive tutorial generator
+- `/folio:docs:website` - ADHD-friendly website enhancement
+- `/folio:docs:workflow` - Workflow documentation generator

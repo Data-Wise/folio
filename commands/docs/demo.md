@@ -3,7 +3,7 @@ description: Terminal Recording & GIF Generator with dependency management
 category: docs
 ---
 
-# /craft:docs:demo - Terminal Recording & GIF Generator
+# /folio:docs:demo - Terminal Recording & GIF Generator
 
 You are a terminal demo creator. Record real terminal sessions or generate scripted demos for documentation.
 
@@ -28,7 +28,7 @@ You are a terminal demo creator. Record real terminal sessions or generate scrip
 
 ```bash
 # ❌ WRONG: Generate demo without testing
-/craft:docs:demo "feature" --generate
+/folio:docs:demo "feature" --generate
 
 # ✅ CORRECT: Test commands first
 # 1. Run commands in Claude Code
@@ -39,7 +39,7 @@ ait command3
 # 2. Verify output format and timing
 # 3. Note any prerequisites needed
 # 4. Generate tape with verified commands
-/craft:docs:demo "feature" --generate
+/folio:docs:demo "feature" --generate
 ```
 
 **Why this matters:**
@@ -54,21 +54,21 @@ See: `templates/docs/GIF-GUIDELINES.md` for full workflow.
 ## Usage
 
 ```bash
-/craft:docs:demo "sessions"                    # Record real session with asciinema (default)
-/craft:docs:demo "sessions" --method vhs       # Generate VHS tape (scripted)
-/craft:docs:demo "sessions" --template workflow # Use specific template
-/craft:docs:demo --list-templates              # Show available templates
-/craft:docs:demo --preview                     # Show recording guide without starting
-/craft:docs:demo "sessions" --watch            # Watch mode: auto-regenerate on changes
-/craft:docs:demo "sessions" --generate         # Record/generate AND convert to GIF immediately
-/craft:docs:demo --check                       # Validate all dependencies
-/craft:docs:demo --check --method asciinema    # Check asciinema-specific deps
-/craft:docs:demo --fix                         # Auto-install missing dependencies
-/craft:docs:demo --fix --method asciinema      # Install missing deps for specific method
-/craft:docs:demo --convert recording.cast      # Convert single .cast file to .gif
-/craft:docs:demo --convert file.cast out.gif   # Convert with custom output name
-/craft:docs:demo --batch                       # Convert all .cast files in docs/
-/craft:docs:demo --batch --force               # Overwrite existing GIF files
+/folio:docs:demo "sessions"                    # Record real session with asciinema (default)
+/folio:docs:demo "sessions" --method vhs       # Generate VHS tape (scripted)
+/folio:docs:demo "sessions" --template workflow # Use specific template
+/folio:docs:demo --list-templates              # Show available templates
+/folio:docs:demo --preview                     # Show recording guide without starting
+/folio:docs:demo "sessions" --watch            # Watch mode: auto-regenerate on changes
+/folio:docs:demo "sessions" --generate         # Record/generate AND convert to GIF immediately
+/folio:docs:demo --check                       # Validate all dependencies
+/folio:docs:demo --check --method asciinema    # Check asciinema-specific deps
+/folio:docs:demo --fix                         # Auto-install missing dependencies
+/folio:docs:demo --fix --method asciinema      # Install missing deps for specific method
+/folio:docs:demo --convert recording.cast      # Convert single .cast file to .gif
+/folio:docs:demo --convert file.cast out.gif   # Convert with custom output name
+/folio:docs:demo --batch                       # Convert all .cast files in docs/
+/folio:docs:demo --batch --force               # Overwrite existing GIF files
 ```
 
 ## Dependency Management
@@ -78,9 +78,9 @@ The demo command includes built-in dependency checking for all required tools.
 ### Check Dependencies
 
 ```bash
-/craft:docs:demo --check                     # Check all dependencies
-/craft:docs:demo --check --method asciinema  # Check for specific method
-/craft:docs:demo --check --json              # Get JSON output for CI/CD
+/folio:docs:demo --check                     # Check all dependencies
+/folio:docs:demo --check --method asciinema  # Check for specific method
+/folio:docs:demo --check --json              # Get JSON output for CI/CD
 ```
 
 Shows a status table with:
@@ -96,9 +96,9 @@ Shows a status table with:
 Get machine-readable dependency status for CI/CD pipelines:
 
 ```bash
-/craft:docs:demo --check --json
-/craft:docs:demo --check --method asciinema --json
-/craft:docs:demo --check --method vhs --json
+/folio:docs:demo --check --json
+/folio:docs:demo --check --method asciinema --json
+/folio:docs:demo --check --method vhs --json
 ```
 
 **Output format:**
@@ -130,8 +130,8 @@ Get machine-readable dependency status for CI/CD pipelines:
 The `--fix` flag automatically installs missing dependencies with your consent.
 
 ```bash
-/craft:docs:demo --fix                       # Install all missing dependencies
-/craft:docs:demo --fix --method asciinema    # Install for asciinema method only
+/folio:docs:demo --fix                       # Install all missing dependencies
+/folio:docs:demo --fix --method asciinema    # Install for asciinema method only
 ```
 
 **How it works:**
@@ -176,18 +176,18 @@ Convert existing `.cast` recordings to optimized `.gif` files.
 **Convert single file:**
 
 ```bash
-/craft:docs:demo --convert recording.cast              # Auto-generate recording.gif
-/craft:docs:demo --convert demo.cast output.gif        # Custom output name
-/craft:docs:demo --convert file.cast --force           # Overwrite existing
+/folio:docs:demo --convert recording.cast              # Auto-generate recording.gif
+/folio:docs:demo --convert demo.cast output.gif        # Custom output name
+/folio:docs:demo --convert file.cast --force           # Overwrite existing
 ```
 
 **Batch convert all files:**
 
 ```bash
-/craft:docs:demo --batch                               # Convert all .cast in docs/
-/craft:docs:demo --batch --force                       # Overwrite existing GIFs
-/craft:docs:demo --batch --search-path custom/path     # Custom search directory
-/craft:docs:demo --batch --dry-run                     # Preview without converting
+/folio:docs:demo --batch                               # Convert all .cast in docs/
+/folio:docs:demo --batch --force                       # Overwrite existing GIFs
+/folio:docs:demo --batch --search-path custom/path     # Custom search directory
+/folio:docs:demo --batch --dry-run                     # Preview without converting
 ```
 
 **Features:**
@@ -345,8 +345,8 @@ if [ "${args_check_dependencies:-false}" = "true" ]; then
     method="${args_method:-asciinema}"
 
     if ! check_dependencies "$method" > /dev/null 2>&1; then
-        echo "⚠️  Missing dependencies. Run: /craft:docs:demo --check"
-        echo "   Or install with: /craft:docs:demo --fix"
+        echo "⚠️  Missing dependencies. Run: /folio:docs:demo --check"
+        echo "   Or install with: /folio:docs:demo --fix"
         exit 1
     fi
 fi
@@ -600,7 +600,7 @@ mkdir -p docs/demos
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ /craft:docs:demo "sessions"                                  │
+│ /folio:docs:demo "sessions"                                  │
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
 │ ✅ VHS TAPE CREATED                                          │
@@ -653,7 +653,7 @@ Create a recording guide (not executed, just instructions):
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ /craft:docs:demo "sessions" --method asciinema               │
+│ /folio:docs:demo "sessions" --method asciinema               │
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
 │ 🎙️  ASCIINEMA RECORDING MODE                                │
@@ -766,7 +766,7 @@ fi
 
 ```bash
 # 1. Generate recording guide
-/craft:docs:demo "teaching-workflow" --method asciinema
+/folio:docs:demo "teaching-workflow" --method asciinema
 
 # 2. Start recording
 asciinema rec docs/demos/teaching-workflow.cast
@@ -872,8 +872,8 @@ Sleep 0.5s
 **Related commands:**
 
 - `/craft:docs:analyze` - Recommends when GIF is needed
-- `/craft:docs:guide` - Embeds GIF in generated guides
-- `/craft:docs:mermaid` - Complementary visual docs
+- `/folio:docs:guide` - Embeds GIF in generated guides
+- `/folio:docs:mermaid` - Complementary visual docs
 
 **CI Integration:**
 
@@ -887,7 +887,7 @@ Iterative development mode for refining demos:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ /craft:docs:demo "sessions" --watch                          │
+│ /folio:docs:demo "sessions" --watch                          │
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
 │ 👀 WATCH MODE ACTIVE                                         │
@@ -909,7 +909,7 @@ Iterative development mode for refining demos:
 
 ```bash
 # 1. Start watch mode
-/craft:docs:demo "sessions" --watch
+/folio:docs:demo "sessions" --watch
 
 # 2. Edit the tape file (in another terminal/editor)
 vim docs/demos/sessions.tape
@@ -957,7 +957,7 @@ Skip the manual steps - generate tape AND create GIF in one command:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ /craft:docs:demo "sessions" --generate                       │
+│ /folio:docs:demo "sessions" --generate                       │
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
 │ ✅ DEMO GENERATED                                            │
@@ -1025,16 +1025,16 @@ gifsicle --version
 
 ## See Also
 
-- `/craft:docs:api` - OpenAPI/Swagger documentation generator
+- `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/craft:docs:check` - Documentation health check (links, staleness, navigation)
-- `/craft:docs:check-links` - Internal link validation for documentation
-- `/craft:docs:help` - Help page generator
-- `/craft:docs:lint` - Markdown quality and error detection with auto-fix
+- `/folio:docs:check` - Documentation health check (links, staleness, navigation)
+- `/folio:docs:check-links` - Internal link validation for documentation
+- `/folio:docs:help` - Help page generator
+- `/folio:docs:lint` - Markdown quality and error detection with auto-fix
 - `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
-- `/craft:docs:prompt` - Generate documentation prompts
-- `/craft:docs:quickstart` - Quick start generator
-- `/craft:docs:site` - Website documentation focus
-- `/craft:docs:tutorial` - Interactive tutorial generator
-- `/craft:docs:website` - ADHD-friendly website enhancement
-- `/craft:docs:workflow` - Workflow documentation generator
+- `/folio:docs:prompt` - Generate documentation prompts
+- `/folio:docs:quickstart` - Quick start generator
+- `/folio:docs:site` - Website documentation focus
+- `/folio:docs:tutorial` - Interactive tutorial generator
+- `/folio:docs:website` - ADHD-friendly website enhancement
+- `/folio:docs:workflow` - Workflow documentation generator

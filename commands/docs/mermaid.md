@@ -19,7 +19,7 @@ arguments:
     default: false
 ---
 
-# /craft:docs:mermaid - Mermaid Diagrams
+# /folio:docs:mermaid - Mermaid Diagrams
 
 Generate, validate, and preview Mermaid diagrams. Supports templates, natural language creation, and MCP-powered validation.
 
@@ -35,26 +35,26 @@ Generate, validate, and preview Mermaid diagrams. Supports templates, natural la
 
 ```bash
 # TEMPLATES (existing)
-/craft:docs:mermaid                    # Show all templates
-/craft:docs:mermaid dependency         # Dependency graph template
-/craft:docs:mermaid workflow           # Workflow/process template
-/craft:docs:mermaid architecture       # System architecture template
-/craft:docs:mermaid comparison         # Side-by-side comparison
-/craft:docs:mermaid sequence           # Sequence diagram template
-/craft:docs:mermaid state              # State machine template
-/craft:docs:mermaid all --output docs/diagrams/templates.md
+/folio:docs:mermaid                    # Show all templates
+/folio:docs:mermaid dependency         # Dependency graph template
+/folio:docs:mermaid workflow           # Workflow/process template
+/folio:docs:mermaid architecture       # System architecture template
+/folio:docs:mermaid comparison         # Side-by-side comparison
+/folio:docs:mermaid sequence           # Sequence diagram template
+/folio:docs:mermaid state              # State machine template
+/folio:docs:mermaid all --output docs/diagrams/templates.md
 
 # NL CREATION (NEW)
-/craft:docs:mermaid "show the release pipeline from dev to main"
-/craft:docs:mermaid "auth flow with OAuth2 showing token refresh"
-/craft:docs:mermaid "CI pipeline: lint, test, build, deploy"
+/folio:docs:mermaid "show the release pipeline from dev to main"
+/folio:docs:mermaid "auth flow with OAuth2 showing token refresh"
+/folio:docs:mermaid "CI pipeline: lint, test, build, deploy"
 
 # VALIDATION (NEW)
-/craft:docs:mermaid "simple flowchart" --validate
-/craft:docs:mermaid workflow --validate
+/folio:docs:mermaid "simple flowchart" --validate
+/folio:docs:mermaid workflow --validate
 
 # LIVE PREVIEW (NEW)
-/craft:docs:mermaid "auth flow" --preview
+/folio:docs:mermaid "auth flow" --preview
 ```
 
 ## NL Creation Workflow
@@ -425,8 +425,8 @@ When running without `--output`:
 │   • state       - State machine transitions         │
 │                                                     │
 │ Usage:                                              │
-│   /craft:docs:mermaid <type>                        │
-│   /craft:docs:mermaid all --output docs/templates.md│
+│   /folio:docs:mermaid <type>                        │
+│   /folio:docs:mermaid all --output docs/templates.md│
 │                                                     │
 ╰─────────────────────────────────────────────────────╯
 ```
@@ -535,8 +535,8 @@ graph TB
 
 **Related commands:**
 
-- `/craft:docs:generate diagram` - Routes to mermaid-expert agent
-- `/craft:docs:check` - Phase 5: Mermaid Validation (health score)
+- `/folio:docs:generate diagram` - Routes to mermaid-expert agent
+- `/folio:docs:check` - Phase 5: Mermaid Validation (health score)
 - `/craft:site:status` - Validates Mermaid configuration
 
 **Uses skill:**

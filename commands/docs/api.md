@@ -1,11 +1,11 @@
 ---
-description: "/craft:docs:api - OpenAPI/Swagger Documentation"
+description: "/folio:docs:api - OpenAPI/Swagger Documentation"
 category: docs
 ---
 
-# /craft:docs:api - OpenAPI/Swagger Documentation
+# /folio:docs:api - OpenAPI/Swagger Documentation
 
-> Also reachable via `/craft:docs:generate api` (unified router across all 9 doc generators).
+> Also reachable via `/folio:docs:generate api` (unified router across all 9 doc generators).
 
 You are an API documentation specialist. Generate OpenAPI 3.1 specifications and interactive documentation.
 
@@ -41,18 +41,18 @@ Options:
   4. [validate]    Validate existing spec
   5. [update]      Update spec from code changes
 
-Or specify: /craft:docs:api <option> [--output path]
+Or specify: /folio:docs:api <option> [--output path]
 ```
 
 ### With Arguments
 
 ```bash
-/craft:docs:api                           # Analyze and suggest
-/craft:docs:api generate                  # Generate spec from code
-/craft:docs:api --interactive             # Set up Swagger UI
-/craft:docs:api --output openapi.yaml     # Custom output path
-/craft:docs:api validate                  # Validate existing spec
-/craft:docs:api sdk python                # Generate Python SDK
+/folio:docs:api                           # Analyze and suggest
+/folio:docs:api generate                  # Generate spec from code
+/folio:docs:api --interactive             # Set up Swagger UI
+/folio:docs:api --output openapi.yaml     # Custom output path
+/folio:docs:api validate                  # Validate existing spec
+/folio:docs:api sdk python                # Generate Python SDK
 ```
 
 ## Step-by-Step Process
@@ -242,23 +242,23 @@ Uses skills:
 
 Works with:
 
-- `/craft:docs:generate` - Part of full documentation
+- `/folio:docs:generate` - Part of full documentation
 - `/craft:docs:validate` - Validate generated spec
 - `/craft:code:deps-audit` - Check API dependencies
 
 ## See Also
 
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/craft:docs:check` - Documentation health check (links, staleness, navigation)
-- `/craft:docs:check-links` - Internal link validation for documentation
-- `/craft:docs:demo` - Terminal recording and GIF generator with dependency management
-- `/craft:docs:guide` - Orchestrated guide generator
-- `/craft:docs:help` - Help page generator
-- `/craft:docs:lint` - Markdown quality and error detection with auto-fix
+- `/folio:docs:check` - Documentation health check (links, staleness, navigation)
+- `/folio:docs:check-links` - Internal link validation for documentation
+- `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
+- `/folio:docs:guide` - Orchestrated guide generator
+- `/folio:docs:help` - Help page generator
+- `/folio:docs:lint` - Markdown quality and error detection with auto-fix
 - `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
-- `/craft:docs:prompt` - Generate documentation prompts
-- `/craft:docs:quickstart` - Quick start generator
-- `/craft:docs:site` - Website documentation focus
-- `/craft:docs:tutorial` - Interactive tutorial generator
-- `/craft:docs:website` - ADHD-friendly website enhancement
-- `/craft:docs:workflow` - Workflow documentation generator
+- `/folio:docs:prompt` - Generate documentation prompts
+- `/folio:docs:quickstart` - Quick start generator
+- `/folio:docs:site` - Website documentation focus
+- `/folio:docs:tutorial` - Interactive tutorial generator
+- `/folio:docs:website` - ADHD-friendly website enhancement
+- `/folio:docs:workflow` - Workflow documentation generator

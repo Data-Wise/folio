@@ -1,5 +1,5 @@
 ---
-description: "/craft:docs:generate - Unified Documentation Generator Router"
+description: "/folio:docs:generate - Unified Documentation Generator Router"
 category: docs
 arguments:
   - name: type
@@ -7,25 +7,25 @@ arguments:
     required: true
 ---
 
-# /craft:docs:generate - Unified Documentation Generator Router
+# /folio:docs:generate - Unified Documentation Generator Router
 
 Thin router for the 9 documentation generator commands. Each generator has genuinely
 distinct logic (different templates, different orchestration, different output
-formats) — this command exists for discoverability (`/craft:docs:generate <type>`
+formats) — this command exists for discoverability (`/folio:docs:generate <type>`
 instead of remembering 9 separate names), not to reimplement any of them.
 
 ## Usage
 
 ```bash
-/craft:docs:generate api          # OpenAPI/Swagger spec generation
-/craft:docs:generate guide        # Orchestrated feature guide + demo + refcard
-/craft:docs:generate help         # Help page generator
-/craft:docs:generate prompt       # Documentation prompt generator
-/craft:docs:generate quickstart   # 5-minute quickstart guide
-/craft:docs:generate site         # Website documentation focus
-/craft:docs:generate tutorial     # Interactive tutorial generator
-/craft:docs:generate website      # ADHD-friendly website enhancement
-/craft:docs:generate workflow     # Workflow documentation generator
+/folio:docs:generate api          # OpenAPI/Swagger spec generation
+/folio:docs:generate guide        # Orchestrated feature guide + demo + refcard
+/folio:docs:generate help         # Help page generator
+/folio:docs:generate prompt       # Documentation prompt generator
+/folio:docs:generate quickstart   # 5-minute quickstart guide
+/folio:docs:generate site         # Website documentation focus
+/folio:docs:generate tutorial     # Interactive tutorial generator
+/folio:docs:generate website      # ADHD-friendly website enhancement
+/folio:docs:generate workflow     # Workflow documentation generator
 ```
 
 ## When invoked
@@ -61,12 +61,12 @@ genuinely different internal logic (orchestration-of-other-commands for
 category argument has. Deleting the 9 direct entry points and inlining
 their bodies into one dispatcher would risk losing behavior mid-merge for
 no real simplification. This router adds the shorter/discoverable
-`/craft:docs:generate <type>` path **alongside** the existing direct
-commands (`/craft:docs:guide`, `/craft:docs:api`, etc.), which keep working
+`/folio:docs:generate <type>` path **alongside** the existing direct
+commands (`/folio:docs:guide`, `/folio:docs:api`, etc.), which keep working
 unchanged.
 
 ## See Also
 
-- `/craft:docs:api`, `/craft:docs:guide`, `/craft:docs:help`, `/craft:docs:prompt`, `/craft:docs:quickstart`, `/craft:docs:site`, `/craft:docs:tutorial`, `/craft:docs:website`, `/craft:docs:workflow` — the 9 canonical generators, still directly invocable
-- `/craft:docs:check` — validate what was generated
+- `/folio:docs:api`, `/folio:docs:guide`, `/folio:docs:help`, `/folio:docs:prompt`, `/folio:docs:quickstart`, `/folio:docs:site`, `/folio:docs:tutorial`, `/folio:docs:website`, `/folio:docs:workflow` — the 9 canonical generators, still directly invocable
+- `/folio:docs:check` — validate what was generated
 - `/craft:hub` — discover all commands

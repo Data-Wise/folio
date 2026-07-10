@@ -13,7 +13,7 @@ arguments:
     alias: --fix
 ---
 
-# /craft:docs:lint - Markdown Quality Checks
+# /folio:docs:lint - Markdown Quality Checks
 
 Detect and fix markdown formatting errors with embedded rules and auto-fix capability.
 
@@ -95,28 +95,28 @@ npx markdownlint-cli2 "**/*.md" --config .markdownlint.json
 
 ```bash
 # Check markdown files
-/craft:docs:lint
+/folio:docs:lint
 
 # Check with auto-fix
-/craft:docs:lint --fix
+/folio:docs:lint --fix
 
 # Check specific path
-/craft:docs:lint docs/guide/
+/folio:docs:lint docs/guide/
 ```
 
 **Future (planned for v2.9.0+):**
 
 ```bash
 # Advanced modes: debug, optimize, release
-/craft:docs:lint debug          # Verbose with context
-/craft:docs:lint optimize       # Parallel processing
-/craft:docs:lint release --fix  # Comprehensive + auto-fix
+/folio:docs:lint debug          # Verbose with context
+/folio:docs:lint optimize       # Parallel processing
+/folio:docs:lint release --fix  # Comprehensive + auto-fix
 
 # Raw output
-/craft:docs:lint --verbose
+/folio:docs:lint --verbose
 
 # Dry-run preview
-/craft:docs:lint --dry-run
+/folio:docs:lint --dry-run
 ```
 
 ## Modes
@@ -170,7 +170,7 @@ echo "Checking ${#FILES[@]} markdown files..."
 **Styled Output (default):**
 
 ```text
-╭─ /craft:docs:lint ──────────────────────────────────────────╮
+╭─ /folio:docs:lint ──────────────────────────────────────────╮
 │                                                             │
 │ docs/test-violations.md:                                    │
 │   Line 21: MD032 - Missing blank line before list           │
@@ -324,7 +324,7 @@ Apply these 5 fixes? [y/N]: _
 Total: 5 fixes applied in 3 files
 
 Re-running lint check...
-╭─ /craft:docs:lint ──────────────────────────────────────────╮
+╭─ /folio:docs:lint ──────────────────────────────────────────╮
 │ ✓ All checks passed! 48 files, 0 issues                     │
 ╰─────────────────────────────────────────────────────────────╯
 ```
@@ -594,7 +594,7 @@ detect_language() {
 ### Styled Output (Default)
 
 ```text
-╭─ /craft:docs:lint (default mode) ───────────────────────────╮
+╭─ /folio:docs:lint (default mode) ───────────────────────────╮
 │                                                             │
 │ ✓ Checked: 48 markdown files                                │
 │                                                             │
@@ -616,7 +616,7 @@ detect_language() {
 │ All issues are auto-fixable!                                │
 │                                                             │
 │ Run with --fix to apply fixes:                              │
-│   /craft:docs:lint --fix                                    │
+│   /folio:docs:lint --fix                                    │
 │                                                             │
 │ Exit code: 0 (auto-fixable)                                 │
 │                                                             │
@@ -680,7 +680,7 @@ docs/guide/setup.md:45:30: MD009 - Trailing spaces (auto-fixable)
 ### Release Mode Dry-Run
 
 ```bash
-/craft:docs:lint release --dry-run
+/folio:docs:lint release --dry-run
 ```
 
 ```text
@@ -739,7 +739,7 @@ docs/guide/setup.md:45:30: MD009 - Trailing spaces (auto-fixable)
 
 **Works with:**
 
-- `/craft:docs:check-links` - Link validation
+- `/folio:docs:check-links` - Link validation
 - `/craft:site:check` - Site validation (calls lint before build)
 - `/craft:ci:validate` - CI pipeline validation
 
@@ -758,27 +758,27 @@ docs/guide/setup.md:45:30: MD009 - Trailing spaces (auto-fixable)
 
 ```bash
 # Quick check before commit
-/craft:docs:lint
+/folio:docs:lint
 # → Reports issues with styled output
 
 # Raw output for piping/scripting
-/craft:docs:lint --verbose
+/folio:docs:lint --verbose
 # → Raw markdownlint output
 
 # Preview and apply fixes
-/craft:docs:lint --fix
+/folio:docs:lint --fix
 # → Shows preview, asks confirmation, applies fixes
 
 # Debug specific file
-/craft:docs:lint debug docs/guide/setup.md
+/folio:docs:lint debug docs/guide/setup.md
 # → Verbose output with suggestions
 
 # Release validation
-/craft:docs:lint release --fix
+/folio:docs:lint release --fix
 # → Comprehensive check + auto-fix
 
 # Preview without executing
-/craft:docs:lint --dry-run
+/folio:docs:lint --dry-run
 # → Shows what will be checked
 ```
 
@@ -795,7 +795,7 @@ docs/guide/setup.md:45:30: MD009 - Trailing spaces (auto-fixable)
 
 - Install globally: `npm i -g markdownlint-cli2` (faster than npx)
 - Use `optimize` mode for large doc sets (100+ files)
-- Use specific paths for quick checks: `/craft:docs:lint docs/guide/`
+- Use specific paths for quick checks: `/folio:docs:lint docs/guide/`
 - Default mode focuses on critical errors only
 
 ## Troubleshooting
@@ -834,7 +834,7 @@ git reset --hard HEAD
 
 ```bash
 # Debug mode shows detection
-/craft:docs:lint debug file.md
+/folio:docs:lint debug file.md
 
 # Manually correct in file
 # Before: ```python (incorrect)
@@ -855,20 +855,20 @@ npx markdownlint-cli2 --help
 
 ## See Also
 
-- `/craft:docs:check-links` - Documentation link validation
-- `/craft:docs:check` - Full documentation health check
+- `/folio:docs:check-links` - Documentation link validation
+- `/folio:docs:check` - Full documentation health check
 - `/craft:code:lint` - Code linting (delegates markdown here)
 - `/craft:site:check` - Site validation (includes lint step)
 - Template: `templates/dry-run-pattern.md`
-- `/craft:docs:api` - OpenAPI/Swagger documentation generator
+- `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/craft:docs:demo` - Terminal recording and GIF generator with dependency management
-- `/craft:docs:guide` - Orchestrated guide generator
-- `/craft:docs:help` - Help page generator
+- `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
+- `/folio:docs:guide` - Orchestrated guide generator
+- `/folio:docs:help` - Help page generator
 - `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
-- `/craft:docs:prompt` - Generate documentation prompts
-- `/craft:docs:quickstart` - Quick start generator
-- `/craft:docs:site` - Website documentation focus
-- `/craft:docs:tutorial` - Interactive tutorial generator
-- `/craft:docs:website` - ADHD-friendly website enhancement
-- `/craft:docs:workflow` - Workflow documentation generator
+- `/folio:docs:prompt` - Generate documentation prompts
+- `/folio:docs:quickstart` - Quick start generator
+- `/folio:docs:site` - Website documentation focus
+- `/folio:docs:tutorial` - Interactive tutorial generator
+- `/folio:docs:website` - ADHD-friendly website enhancement
+- `/folio:docs:workflow` - Workflow documentation generator

@@ -1,11 +1,11 @@
 ---
-description: "/craft:docs:website - ADHD-Friendly Website Enhancement"
+description: "/folio:docs:website - ADHD-Friendly Website Enhancement"
 category: docs
 ---
 
-# /craft:docs:website - ADHD-Friendly Website Enhancement
+# /folio:docs:website - ADHD-Friendly Website Enhancement
 
-> Also reachable via `/craft:docs:generate website` (unified router across all 9 doc generators).
+> Also reachable via `/folio:docs:generate website` (unified router across all 9 doc generators).
 
 You are a website optimization expert specializing in ADHD-friendly documentation.
 
@@ -26,13 +26,13 @@ You are a website optimization expert specializing in ADHD-friendly documentatio
 ## Usage
 
 ```bash
-/craft:docs:website                  # Full enhancement (all 3 phases)
-/craft:docs:website --analyze        # Show ADHD score only
-/craft:docs:website --phase 1        # Quick wins only (< 2 hours)
-/craft:docs:website --phase 2        # Structure improvements (< 4 hours)
-/craft:docs:website --phase 3        # Polish & mobile (< 8 hours)
-/craft:docs:website --dry-run        # Preview changes without writing
-/craft:docs:website --validate       # Validate current state
+/folio:docs:website                  # Full enhancement (all 3 phases)
+/folio:docs:website --analyze        # Show ADHD score only
+/folio:docs:website --phase 1        # Quick wins only (< 2 hours)
+/folio:docs:website --phase 2        # Structure improvements (< 4 hours)
+/folio:docs:website --phase 3        # Polish & mobile (< 8 hours)
+/folio:docs:website --dry-run        # Preview changes without writing
+/folio:docs:website --validate       # Validate current state
 ```
 
 ---
@@ -684,7 +684,7 @@ Show comprehensive report:
 │ 🎯 NEXT STEPS:                                              │
 │                                                             │
 │ Option 1: Continue to Phase 2                               │
-│   /craft:docs:website --phase 2                             │
+│   /folio:docs:website --phase 2                             │
 │   Impact: +[POINTS] points (→ [SCORE]/100)                  │
 │   Duration: ~4 hours                                        │
 │                                                             │
@@ -709,7 +709,7 @@ Show comprehensive report:
 
 - `/craft:docs:update` - Can call `--website-mode` for enhancements
 - `/craft:site:status` - Shows ADHD score in output
-- `/craft:docs:check` - Validates website enhancements
+- `/folio:docs:check` - Validates website enhancements
 
 **Uses these internal functions:**
 
@@ -788,16 +788,16 @@ After this command works:
 
 ## See Also
 
-- `/craft:docs:api` - OpenAPI/Swagger documentation generator
+- `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/craft:docs:check-links` - Internal link validation for documentation
-- `/craft:docs:demo` - Terminal recording and GIF generator with dependency management
-- `/craft:docs:guide` - Orchestrated guide generator
-- `/craft:docs:help` - Help page generator
-- `/craft:docs:lint` - Markdown quality and error detection with auto-fix
+- `/folio:docs:check-links` - Internal link validation for documentation
+- `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
+- `/folio:docs:guide` - Orchestrated guide generator
+- `/folio:docs:help` - Help page generator
+- `/folio:docs:lint` - Markdown quality and error detection with auto-fix
 - `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
-- `/craft:docs:prompt` - Generate documentation prompts
-- `/craft:docs:quickstart` - Quick start generator
-- `/craft:docs:site` - Website documentation focus
-- `/craft:docs:tutorial` - Interactive tutorial generator
-- `/craft:docs:workflow` - Workflow documentation generator
+- `/folio:docs:prompt` - Generate documentation prompts
+- `/folio:docs:quickstart` - Quick start generator
+- `/folio:docs:site` - Website documentation focus
+- `/folio:docs:tutorial` - Interactive tutorial generator
+- `/folio:docs:workflow` - Workflow documentation generator

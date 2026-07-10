@@ -1,11 +1,11 @@
 ---
-description: "/craft:docs:guide - Orchestrated Guide Generator"
+description: "/folio:docs:guide - Orchestrated Guide Generator"
 category: docs
 ---
 
-# /craft:docs:guide - Orchestrated Guide Generator
+# /folio:docs:guide - Orchestrated Guide Generator
 
-> Also reachable via `/craft:docs:generate guide` (unified router across all 9 doc generators).
+> Also reachable via `/folio:docs:generate guide` (unified router across all 9 doc generators).
 
 You are a documentation orchestrator. Create complete feature guides with mermaid diagrams, GIF demos, and refcards.
 
@@ -24,12 +24,12 @@ You are a documentation orchestrator. Create complete feature guides with mermai
 ## Usage
 
 ```bash
-/craft:docs:guide "session tracking"           # Generate complete guide
-/craft:docs:guide "sessions" --no-demo         # Skip GIF generation
-/craft:docs:guide "sessions" --no-mermaid      # Skip diagrams
-/craft:docs:guide "sessions" --no-refcard      # Skip refcard generation
-/craft:docs:guide "sessions" --refcard-only    # Only generate refcard
-/craft:docs:guide "sessions" --dry-run         # Preview without writing
+/folio:docs:guide "session tracking"           # Generate complete guide
+/folio:docs:guide "sessions" --no-demo         # Skip GIF generation
+/folio:docs:guide "sessions" --no-mermaid      # Skip diagrams
+/folio:docs:guide "sessions" --no-refcard      # Skip refcard generation
+/folio:docs:guide "sessions" --refcard-only    # Only generate refcard
+/folio:docs:guide "sessions" --dry-run         # Preview without writing
 ```
 
 ## When Invoked
@@ -226,7 +226,7 @@ Create the demo tape file:
 │ Phase 4/7: GENERATING VHS TAPE                               │
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
-│ Running /craft:docs:demo "sessions"...                       │
+│ Running /folio:docs:demo "sessions"...                       │
 │                                                              │
 │ Template: command-showcase                                   │
 │ Commands: ait sessions live, current, conflicts, history     │
@@ -433,8 +433,8 @@ sequenceDiagram
 **Uses these commands internally:**
 
 - `/craft:docs:analyze` - Feature classification
-- `/craft:docs:demo` - VHS tape generation
-- `/craft:docs:mermaid` - Diagram templates
+- `/folio:docs:demo` - VHS tape generation
+- `/folio:docs:mermaid` - Diagram templates
 - `/craft:docs:nav-update` - Navigation updates
 
 **Uses these agents:**
@@ -465,15 +465,15 @@ sequenceDiagram
 
 ## See Also
 
-- `/craft:docs:api` - OpenAPI/Swagger documentation generator
+- `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/craft:docs:check` - Documentation health check (links, staleness, navigation)
-- `/craft:docs:check-links` - Internal link validation for documentation
-- `/craft:docs:help` - Help page generator
-- `/craft:docs:lint` - Markdown quality and error detection with auto-fix
-- `/craft:docs:prompt` - Generate documentation prompts
-- `/craft:docs:quickstart` - Quick start generator
-- `/craft:docs:site` - Website documentation focus
-- `/craft:docs:tutorial` - Interactive tutorial generator
-- `/craft:docs:website` - ADHD-friendly website enhancement
-- `/craft:docs:workflow` - Workflow documentation generator
+- `/folio:docs:check` - Documentation health check (links, staleness, navigation)
+- `/folio:docs:check-links` - Internal link validation for documentation
+- `/folio:docs:help` - Help page generator
+- `/folio:docs:lint` - Markdown quality and error detection with auto-fix
+- `/folio:docs:prompt` - Generate documentation prompts
+- `/folio:docs:quickstart` - Quick start generator
+- `/folio:docs:site` - Website documentation focus
+- `/folio:docs:tutorial` - Interactive tutorial generator
+- `/folio:docs:website` - ADHD-friendly website enhancement
+- `/folio:docs:workflow` - Workflow documentation generator

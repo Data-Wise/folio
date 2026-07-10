@@ -1,11 +1,11 @@
 ---
-description: "/craft:docs:quickstart - Quick Start Generator"
+description: "/folio:docs:quickstart - Quick Start Generator"
 category: docs
 ---
 
-# /craft:docs:quickstart - Quick Start Generator
+# /folio:docs:quickstart - Quick Start Generator
 
-> Also reachable via `/craft:docs:generate quickstart` (unified router across all 9 doc generators).
+> Also reachable via `/folio:docs:generate quickstart` (unified router across all 9 doc generators).
 
 Generate a 5-minute quickstart guide for any project.
 
@@ -22,16 +22,16 @@ Generate a 5-minute quickstart guide for any project.
 
 ```bash
 # Generate quickstart for current project
-/craft:docs:quickstart                # Auto-detect everything
+/folio:docs:quickstart                # Auto-detect everything
 
 # Specify output
-/craft:docs:quickstart --output docs/QUICK-START.md
-/craft:docs:quickstart --output README.md --section  # Add to README
+/folio:docs:quickstart --output docs/QUICK-START.md
+/folio:docs:quickstart --output README.md --section  # Add to README
 
 # Options
-/craft:docs:quickstart --format terminal    # Preview in terminal
-/craft:docs:quickstart --dry-run            # Show plan only
-/craft:docs:quickstart --verbose            # Detailed output
+/folio:docs:quickstart --format terminal    # Preview in terminal
+/folio:docs:quickstart --dry-run            # Show plan only
+/folio:docs:quickstart --verbose            # Detailed output
 ```
 
 ## When Invoked
@@ -233,17 +233,17 @@ status: Production Ready
 
 ## See Also
 
-- `/craft:docs:api` - OpenAPI/Swagger documentation generator
+- `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/craft:docs:check` - Documentation health check (links, staleness, navigation)
-- `/craft:docs:check-links` - Internal link validation for documentation
-- `/craft:docs:demo` - Terminal recording and GIF generator with dependency management
-- `/craft:docs:guide` - Orchestrated guide generator
-- `/craft:docs:help` - Help page generator
-- `/craft:docs:lint` - Markdown quality and error detection with auto-fix
+- `/folio:docs:check` - Documentation health check (links, staleness, navigation)
+- `/folio:docs:check-links` - Internal link validation for documentation
+- `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
+- `/folio:docs:guide` - Orchestrated guide generator
+- `/folio:docs:help` - Help page generator
+- `/folio:docs:lint` - Markdown quality and error detection with auto-fix
 - `/craft:docs:nav-update` - Update mkdocs.yml navigation from directory structure
-- `/craft:docs:prompt` - Generate documentation prompts
-- `/craft:docs:site` - Website documentation focus
-- `/craft:docs:tutorial` - Interactive tutorial generator
-- `/craft:docs:website` - ADHD-friendly website enhancement
-- `/craft:docs:workflow` - Workflow documentation generator
+- `/folio:docs:prompt` - Generate documentation prompts
+- `/folio:docs:site` - Website documentation focus
+- `/folio:docs:tutorial` - Interactive tutorial generator
+- `/folio:docs:website` - ADHD-friendly website enhancement
+- `/folio:docs:workflow` - Workflow documentation generator

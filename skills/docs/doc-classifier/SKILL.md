@@ -126,7 +126,7 @@ if classification["guide"]["needed"]:
 **Used by:**
 
 - `/craft:docs:analyze` - Main classification command
-- `/craft:docs:guide` - Determine what to generate
+- `/folio:docs:guide` - Determine what to generate
 - `/craft:docs:feature` - Smart detection enhancement
 - `/craft:docs:update` - Selective updates
 

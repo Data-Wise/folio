@@ -12,7 +12,7 @@ Validate Mermaid diagrams in markdown files for syntax errors, text overflow iss
 - Before deploying documentation sites
 - When diagrams appear as raw code instead of rendered
 - To validate diagram text length (prevents overflow)
-- Part of documentation quality checks (`/craft:docs:check` Phase 5)
+- Part of documentation quality checks (`/folio:docs:check` Phase 5)
 - Release gating via health score
 
 ## Validation Checks
@@ -379,17 +379,17 @@ Recommendations:
 
 **Called by:**
 
-- `/craft:docs:check` - Phase 5: Mermaid Validation
+- `/folio:docs:check` - Phase 5: Mermaid Validation
 - `/craft:site:status --check` - Site health check
-- `/craft:docs:validate` - Documentation validation
+- `/folio:docs:validate` - Documentation validation
 - `/craft:check commit` - Pre-commit checks
 - `/craft:site:deploy` - Health score gate (>= 80)
 
 **Related:**
 
-- `/craft:docs:mermaid` - Diagram templates, NL creation, MCP validation
+- `/folio:docs:mermaid` - Diagram templates, NL creation, MCP validation
 - `/craft:site:status` - Quick Mermaid config check
-- `/craft:docs:generate` - Includes Mermaid guidelines
+- `/folio:docs:generate` - Includes Mermaid guidelines
 - `mermaid-expert` agent - MCP-powered diagram generation
 
 **Scripts:**

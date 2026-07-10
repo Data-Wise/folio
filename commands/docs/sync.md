@@ -32,7 +32,7 @@ arguments:
     default: null
 ---
 
-# /craft:docs:sync - Smart Documentation Detection
+# /folio:docs:sync - Smart Documentation Detection
 
 You are a documentation needs detector. Analyze changes and classify what documentation is needed.
 
@@ -55,21 +55,21 @@ Quick by default. Run it often. Get a summary of doc status.
 
 ```bash
 # DEFAULT: Quick detection + classification + summary
-/craft:docs:sync                      # "3 docs stale, guide recommended (score: 7)"
+/folio:docs:sync                      # "3 docs stale, guide recommended (score: 7)"
 
 # OPTIONS
-/craft:docs:sync --verbose            # Detailed change analysis
-/craft:docs:sync --json               # Machine-readable output
-/craft:docs:sync "feature-name"       # Analyze specific feature
-/craft:docs:sync --since HEAD~20      # Custom commit range
+/folio:docs:sync --verbose            # Detailed change analysis
+/folio:docs:sync --json               # Machine-readable output
+/folio:docs:sync "feature-name"       # Analyze specific feature
+/folio:docs:sync --since HEAD~20      # Custom commit range
 
 # Preview detection plan
-/craft:docs:sync --dry-run
-/craft:docs:sync -n
+/folio:docs:sync --dry-run
+/folio:docs:sync -n
 
 # Non-interactive (NEW in v2.22.0)
-/craft:docs:sync --headless           # Auto-approve all, commit changes
-/craft:docs:sync --headless --dry-run # Show what would change without modifying
+/folio:docs:sync --headless           # Auto-approve all, commit changes
+/folio:docs:sync --headless --dry-run # Show what would change without modifying
 ```
 
 ## Dry-Run Mode
@@ -123,7 +123,7 @@ Non-interactive mode for CI automation and scripted workflows.
 
 ```text
 ┌───────────────────────────────────────────────────────────────┐
-│ /craft:docs:sync --headless                                   │
+│ /folio:docs:sync --headless                                   │
 ├───────────────────────────────────────────────────────────────┤
 │ Mode: Headless (non-interactive)                              │
 │                                                               │
@@ -146,7 +146,7 @@ Shows what would be updated without modifying files:
 
 ```text
 ┌───────────────────────────────────────────────────────────────┐
-│ /craft:docs:sync --headless --dry-run                         │
+│ /folio:docs:sync --headless --dry-run                         │
 ├───────────────────────────────────────────────────────────────┤
 │ Mode: Headless DRY RUN (no changes)                           │
 │                                                               │
@@ -171,9 +171,9 @@ The `--headless` flag enables CI automation via GitHub Actions. See `.github/wor
 Use `--orch` flag for orchestrated documentation updates:
 
 ```bash
-/craft:docs:sync --orch                 # Orchestrated documentation workflow
-/craft:docs:sync --orch=optimize        # Fast parallel doc updates
-/craft:docs:sync --orch=release --dry-run   # Preview orchestrated workflow
+/folio:docs:sync --orch                 # Orchestrated documentation workflow
+/folio:docs:sync --orch=optimize        # Fast parallel doc updates
+/folio:docs:sync --orch=release --dry-run   # Preview orchestrated workflow
 ```
 
 ### Orchestration Flow
@@ -299,7 +299,7 @@ find docs/ -name "*.md" -mtime +30
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ /craft:docs:sync                                            │
+│ /folio:docs:sync                                            │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │ 📊 DOCUMENTATION STATUS                                     │
@@ -321,7 +321,7 @@ find docs/ -name "*.md" -mtime +30
 │   Phase 7: 3 stale counts                                   │
 │   Phase 8: 2 undocumented commands                          │
 │                                                             │
-│ Suggested: /craft:docs:update "session tracking"            │
+│ Suggested: /folio:docs:update "session tracking"            │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -330,7 +330,7 @@ find docs/ -name "*.md" -mtime +30
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ /craft:docs:sync --verbose                                  │
+│ /folio:docs:sync --verbose                                  │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │ 📊 DOCUMENTATION ANALYSIS                                   │
@@ -393,7 +393,7 @@ find docs/ -name "*.md" -mtime +30
 │                                                             │
 │ RECOMMENDED ACTIONS:                                        │
 │                                                             │
-│   1. /craft:docs:update "session tracking"                  │
+│   1. /folio:docs:update "session tracking"                  │
 │      (generates guide, refcard, demo automatically)         │
 │                                                             │
 │   2. Review stale docs manually                             │
@@ -424,7 +424,7 @@ find docs/ -name "*.md" -mtime +30
     { "path": "docs/guide/auth.md", "days": 45, "code_changed": true },
     { "path": "docs/reference/api.md", "days": 32, "code_changed": true }
   ],
-  "suggested_action": "/craft:docs:update \"session tracking\""
+  "suggested_action": "/folio:docs:update \"session tracking\""
 }
 ```
 
@@ -482,17 +482,17 @@ find docs/ -name "*.md" -mtime +30
 
 **Called by:**
 
-- `/craft:docs:update` - First step of update cycle
+- `/folio:docs:update` - First step of update cycle
 
 **Replaces:**
 
-- `/craft:docs:analyze` - Classification merged into sync
-- `/craft:docs:done` - Lightweight mode is now the default
+- `/folio:docs:analyze` - Classification merged into sync
+- `/folio:docs:done` - Lightweight mode is now the default
 
 **Works with:**
 
-- `/craft:docs:update` - Run sync first, then update generates
-- `/craft:docs:check` - Sync detects, check validates
+- `/folio:docs:update` - Run sync first, then update generates
+- `/folio:docs:check` - Sync detects, check validates
 
 ## ADHD-Friendly Design
 
@@ -505,7 +505,7 @@ find docs/ -name "*.md" -mtime +30
 ## Orchestration Examples (v2.5.0)
 
 ```
-User: /craft:docs:sync --orch=optimize
+User: /folio:docs:sync --orch=optimize
 
 → ORCHESTRATOR v2.1 — OPTIMIZE MODE
 Spawning orchestrator...
@@ -516,7 +516,7 @@ Executing: /craft:orch 'analyze code changes and update all affected documentati
 ```
 
 ```
-User: /craft:docs:sync --orch=release --dry-run
+User: /folio:docs:sync --orch=release --dry-run
 
 +---------------------------------------------------------------------+
 | DRY RUN: Orchestration Preview                                      |

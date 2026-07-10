@@ -1,11 +1,11 @@
 ---
-description: "/craft:docs:site - Website Documentation Focus"
+description: "/folio:docs:site - Website Documentation Focus"
 category: docs
 ---
 
-# /craft:docs:site - Website Documentation Focus
+# /folio:docs:site - Website Documentation Focus
 
-> Also reachable via `/craft:docs:generate site` (unified router across all 9 doc generators).
+> Also reachable via `/folio:docs:generate site` (unified router across all 9 doc generators).
 
 You are a documentation site specialist. Update all website-related docs and optionally deploy.
 
@@ -21,10 +21,10 @@ You are a documentation site specialist. Update all website-related docs and opt
 ## Usage
 
 ```bash
-/craft:docs:site              # Update website docs
-/craft:docs:site --preview    # Update + preview locally
-/craft:docs:site --deploy     # Update + deploy to GitHub Pages
-/craft:docs:site --validate   # Only validate, no updates
+/folio:docs:site              # Update website docs
+/folio:docs:site --preview    # Update + preview locally
+/folio:docs:site --deploy     # Update + deploy to GitHub Pages
+/folio:docs:site --validate   # Only validate, no updates
 ```
 
 ## When Invoked
@@ -62,7 +62,7 @@ grep -r "\]\(\./" docs/
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ /craft:docs:site                                            │
+│ /folio:docs:site                                            │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │ 📚 DOCUMENTATION SITE UPDATE                                │
@@ -209,7 +209,7 @@ mkdocs serve --dev-addr localhost:8000
 │ Press Ctrl+C to stop                                        │
 │                                                             │
 │ After review:                                               │
-│   → Deploy: /craft:docs:site --deploy                       │
+│   → Deploy: /folio:docs:site --deploy                       │
 │   → Or: mkdocs gh-deploy                                    │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -313,16 +313,16 @@ This command focuses on **website docs only**. It:
 
 ## See Also
 
-- `/craft:docs:api` - OpenAPI/Swagger documentation generator
+- `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits
-- `/craft:docs:check` - Documentation health check (links, staleness, navigation)
-- `/craft:docs:check-links` - Internal link validation for documentation
-- `/craft:docs:demo` - Terminal recording and GIF generator with dependency management
-- `/craft:docs:guide` - Orchestrated guide generator
-- `/craft:docs:help` - Help page generator
-- `/craft:docs:lint` - Markdown quality and error detection with auto-fix
-- `/craft:docs:prompt` - Generate documentation prompts
-- `/craft:docs:quickstart` - Quick start generator
-- `/craft:docs:tutorial` - Interactive tutorial generator
-- `/craft:docs:website` - ADHD-friendly website enhancement
-- `/craft:docs:workflow` - Workflow documentation generator
+- `/folio:docs:check` - Documentation health check (links, staleness, navigation)
+- `/folio:docs:check-links` - Internal link validation for documentation
+- `/folio:docs:demo` - Terminal recording and GIF generator with dependency management
+- `/folio:docs:guide` - Orchestrated guide generator
+- `/folio:docs:help` - Help page generator
+- `/folio:docs:lint` - Markdown quality and error detection with auto-fix
+- `/folio:docs:prompt` - Generate documentation prompts
+- `/folio:docs:quickstart` - Quick start generator
+- `/folio:docs:tutorial` - Interactive tutorial generator
+- `/folio:docs:website` - ADHD-friendly website enhancement
+- `/folio:docs:workflow` - Workflow documentation generator
