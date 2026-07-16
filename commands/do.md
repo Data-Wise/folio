@@ -25,6 +25,7 @@ next one themselves.
 2. If it's already an exact command name (`check`, `docs:sync`, `/folio:docs:api`, etc.),
    match it directly — skip keyword matching.
 3. Otherwise match `<task>`'s keywords against the table below, top to bottom, first hit wins.
+   `generate docs` is the catch-all row — any more specific row above it wins first.
 4. **Zero or ambiguous matches** (matches 2+ commands equally, or matches none): don't guess —
    show `/folio:hub`'s command list and ask which one the user meant.
 5. **Single match**: with `--dry-run`/`-n`, print the matched command and one-line reason, then
@@ -36,9 +37,9 @@ next one themselves.
 
 | Keywords in `<task>` | Routes to |
 |---|---|
-| health check, broken link, staleness, nav check, validate docs | `/folio:docs:check` |
-| detect change, classify doc, what docs (do I/does this) need | `/folio:docs:sync` |
-| generate docs (no more specific match below) | `/folio:docs:generate` |
+| health check, broken links, staleness, nav check, validate docs | `/folio:docs:check` |
+| detect changes, classify docs, what docs (do I/does this) need | `/folio:docs:sync` |
+| generate docs | `/folio:docs:generate` |
 | openapi, swagger, api docs, api reference | `/folio:docs:api` |
 | guide, walkthrough, feature guide | `/folio:docs:guide` |
 | tutorial, step-by-step, learn, onboarding | `/folio:docs:tutorial` |
@@ -51,7 +52,7 @@ next one themselves.
 | demo, gif, terminal recording, screen recording | `/folio:docs:demo` |
 | diagram, mermaid, flowchart, sequence diagram, erd | `/folio:docs:mermaid` |
 | lint, markdown quality, formatting | `/folio:docs:lint` |
-| list commands, what can folio do, find a command, help me choose | `/folio:hub` |
+| list commands, what commands, what can folio do, find a command, help me choose | `/folio:hub` |
 
 ## Dry-Run Mode
 
