@@ -1,0 +1,40 @@
+site_name: folio
+site_description: "Docs-authoring toolkit for Claude Code: tutorials, guides, API docs, mermaid diagrams, doc health checks, and site management."
+site_url: https://data-wise.github.io/folio/
+repo_url: https://github.com/Data-Wise/folio
+repo_name: Data-Wise/folio
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - tables
+
+nav:
+  - Home: index.md
+  - Commands: commands.md
+  - Discovery: discovery.md
+  - Generate: generate.md
+  - Validate: validate.md
+  - Skills & Agents: skills-agents.md
