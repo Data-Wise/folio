@@ -1,10 +1,14 @@
-# Commands (16)
+# Commands (17)
+
+See [Discovery](discovery.md), [Generate](generate.md), and [Validate](validate.md) for
+per-family usage guidance — this page is the flat reference listing.
 
 ## Discovery
 
 | Command | Description |
 |---|---|
-| `/folio:hub` | Command discovery hub |
+| `/folio:hub` | Command discovery hub — single-screen listing of all 17 commands |
+| `/folio:do` | Thin keyword-table dispatcher — routes a natural-language request to the right command |
 | `/folio:docs:generate` | Router into the generators below |
 | `/folio:docs:sync` | Detect code changes, classify documentation needs |
 

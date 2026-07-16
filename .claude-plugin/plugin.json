@@ -1,6 +1,6 @@
 {
   "name": "folio",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "description": "Docs-authoring toolkit for Claude Code: tutorials, guides, API docs, mermaid diagrams, doc health checks, and site management. Extracted from craft (v4.0.0 split).",
   "author": {
     "name": "Data-Wise",
