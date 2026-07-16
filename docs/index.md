@@ -22,7 +22,7 @@ claude plugin install folio@data-wise
 
 ## What's included
 
-- **16 commands** — generation (api, guide, tutorial, quickstart, help, prompt, workflow,
+- **17 commands** — generation (api, guide, tutorial, quickstart, help, prompt, workflow,
   website, site, demo, mermaid), validation (check, lint), and discovery (hub, generate, sync)
 - **6 skills** — auto-activate from conversation context (site lifecycle, nav sync, doc
   classification, mermaid linting, OpenAPI generation, demo building)
