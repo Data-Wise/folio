@@ -18,6 +18,13 @@
     "claude-code-plugin"
   ],
   "commands": "./commands",
-  "agents": "./agents",
+  "agents": [
+    "./agents/docs/api-documenter.md",
+    "./agents/docs/demo-engineer.md",
+    "./agents/docs/docs-architect.md",
+    "./agents/docs/mermaid-expert.md",
+    "./agents/docs/reference-builder.md",
+    "./agents/docs/tutorial-engineer.md"
+  ],
   "skills": "./skills"
 }
