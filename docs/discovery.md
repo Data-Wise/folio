@@ -5,9 +5,9 @@ generating anything themselves.
 
 ## `/folio:hub` — browse everything
 
-Prints a single-screen listing of all 17 commands, grouped by GENERATE / VALIDATE, plus folio's
-6 skills and 6 agents. Use this when you want to see the whole surface at once, or don't know
-what folio can do yet.
+Prints a single-screen listing of all 17 commands, grouped into START HERE / GENERATE / VALIDATE
+sections, plus folio's 6 skills and 6 agents. Use this when you want to see the whole surface at
+once, or don't know what folio can do yet.
 
 ```
 /folio:hub
