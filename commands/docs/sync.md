@@ -22,14 +22,6 @@ arguments:
     description: Non-interactive mode - auto-approve all changes and commit (NEW in v2.22.0)
     required: false
     default: false
-  - name: orch
-    description: Enable orchestration mode (NEW in v2.5.0)
-    required: false
-    default: false
-  - name: orch-mode
-    description: "Orchestration mode: default|debug|optimize|release (NEW in v2.5.0)"
-    required: false
-    default: null
 ---
 
 # /folio:docs:sync - Smart Documentation Detection
@@ -165,48 +157,6 @@ Shows what would be updated without modifying files:
 ### CI Usage
 
 The `--headless` flag enables CI automation via GitHub Actions. See `.github/workflows/docs-sync.yml`.
-
-## Orchestration Mode (NEW in v2.5.0)
-
-Use `--orch` flag for orchestrated documentation updates:
-
-```bash
-/folio:docs:sync --orch                 # Orchestrated documentation workflow
-/folio:docs:sync --orch=optimize        # Fast parallel doc updates
-/folio:docs:sync --orch=release --dry-run   # Preview orchestrated workflow
-```
-
-### Orchestration Flow
-
-```python
-from utils.orch_flag_handler import handle_orch_flag, show_orchestration_preview, spawn_orchestrator
-
-orch_flag = args.orch
-mode_flag = args.orch_mode
-dry_run = args.dry_run
-
-if orch_flag:
-    should_orchestrate, mode = handle_orch_flag(
-        "documentation sync and update workflow",
-        orch_flag,
-        mode_flag
-    )
-
-    if dry_run:
-        show_orchestration_preview(
-            "documentation sync with changes from recent commits",
-            mode
-        )
-        return
-
-    spawn_orchestrator(
-        "analyze code changes and update all affected documentation",
-        mode
-    )
-    return
-
-# Otherwise, continue with normal sync flow...
-```
 
 ## When Invoked
 
@@ -501,32 +451,3 @@ find docs/ -name "*.md" -mtime +30
 3. **Clear recommendations** - What to do next
 4. **Verbose when needed** - Details on demand
 5. **JSON for automation** - Script-friendly output
-
-## Orchestration Examples (v2.5.0)
-
-```
-User: /folio:docs:sync --orch=optimize
-
-→ ORCHESTRATOR v2.1 — OPTIMIZE MODE
-Spawning orchestrator...
-   Task: analyze code changes and update all affected documentation
-   Mode: optimize
-
-Executing: /craft:orch 'analyze code changes and update all affected documentation' optimize
-```
-
-```
-User: /folio:docs:sync --orch=release --dry-run
-
-+---------------------------------------------------------------------+
-| DRY RUN: Orchestration Preview                                      |
-+---------------------------------------------------------------------+
-| Task: documentation sync with changes from recent commits           |
-| Mode: release                                                       |
-| Max Agents: 4                                                       |
-| Compression: 85%                                                    |
-+---------------------------------------------------------------------+
-| This would spawn the orchestrator with the above settings.          |
-| Remove --dry-run to execute.                                        |
-+---------------------------------------------------------------------+
-```
