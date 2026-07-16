@@ -34,4 +34,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Commands: commands.md
+  - Discovery: discovery.md
+  - Generate: generate.md
+  - Validate: validate.md
   - Skills & Agents: skills-agents.md

@@ -14,7 +14,7 @@ arguments:
 # /folio:do - Universal Dispatcher
 
 Route a natural-language request (or an explicit command name) to the right folio command.
-folio is small (16 commands total) — this is a **lookup table, not a router**. There is no
+folio is small (17 commands total) — this is a **lookup table, not a router**. There is no
 complexity scoring, no orchestration mode, no branch-awareness, and no multi-step sequencing.
 If a task needs more than one command, name each command to the user and let them invoke the
 next one themselves.
