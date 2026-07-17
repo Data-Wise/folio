@@ -28,6 +28,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install docs dependencies
+        run: pip install mkdocs mkdocs-material
+
       - name: Determine version
         id: version
         env:
