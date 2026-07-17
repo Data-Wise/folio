@@ -4,6 +4,11 @@ site_url: https://data-wise.github.io/folio/
 repo_url: https://github.com/Data-Wise/folio
 repo_name: Data-Wise/folio
 
+exclude_docs: |
+  # Working artifacts (SPEC/BRAINSTORM planning docs) - kept in-repo as live capture
+  # targets but excluded wholesale from the published site, same convention as craft.
+  specs/
+
 theme:
   name: material
   palette:
