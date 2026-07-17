@@ -38,3 +38,12 @@ nav:
   - Generate: generate.md
   - Validate: validate.md
   - Skills & Agents: skills-agents.md
+  - 📚 Cookbook:
+      - Cookbook Home: cookbook/index.md
+      - Recipes:
+          - Find the Right Docs Command: cookbook/recipes/find-the-right-docs-command.md
+          - Generate an API Reference: cookbook/recipes/generate-an-api-reference.md
+          - Write a Tutorial for a New Feature: cookbook/recipes/write-a-tutorial.md
+          - Check Documentation Health Before a PR: cookbook/recipes/check-docs-health-before-a-pr.md
+          - Build and Preview the Docs Site: cookbook/recipes/build-and-preview-the-docs-site.md
+          - Create a Mermaid Diagram from Natural Language: cookbook/recipes/create-a-mermaid-diagram.md
