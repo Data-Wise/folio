@@ -1,6 +1,6 @@
 # SPEC: Fix folio-install Silent Registration Failure (#18)
 
-**Date:** 2026-07-16 · **Status:** Draft — ready to drive
+**Date:** 2026-07-16 · **Status:** Fix implemented — [Data-Wise/homebrew-tap#143](https://github.com/Data-Wise/homebrew-tap/pull/143) open, CI green, awaiting merge review
 **Issue:** [Data-Wise/folio#18](https://github.com/Data-Wise/folio/issues/18)
 **Repo:** **`homebrew-tap`** — the actual bug and fix live there, not in `folio`. This SPEC is
 filed in `folio`'s `docs/specs/` because the issue is filed against folio and this is where a
