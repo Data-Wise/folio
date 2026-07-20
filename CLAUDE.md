@@ -34,7 +34,7 @@ see the global `~/.claude/CLAUDE.md` for the full rules.
 |---|---|
 | Full suite | `python3 -m pytest tests/` |
 | Counts | `./scripts/validate-counts.sh` (keys on SKILL.md only; floors 15/6/6) |
-| Site | `mkdocs build --strict` |
+| Site | `mkdocs build --strict` (also enforced automatically by `ci.yml` on every PR, not just at release) |
 
 Run all three in the tree a PR ships from, before opening it.
 
@@ -42,7 +42,9 @@ Run all three in the tree a PR ships from, before opening it.
 
 `dev → main` PR (merge-commit) → tag → GitHub release → homebrew-release.yml +
 aggregator-sync.yml auto-propagate (tap formula + marketplace). Count/version cascade via
-`./scripts/bump-version.sh` — never hand-edit counts.
+`./scripts/bump-version.sh` — never hand-edit counts. `homebrew-tap`'s `main` is branch-protected
+(PR-only + required checks), so `homebrew-release.yml`'s tap-push step opens a `bot/folio-*`
+branch + PR and enables GitHub native auto-merge rather than pushing directly.
 
 ## Provenance
 
