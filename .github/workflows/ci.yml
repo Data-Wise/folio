@@ -60,3 +60,9 @@ jobs:
 
       - name: Validate command/agent/skill counts
         run: bash scripts/validate-counts.sh
+
+      - name: Install docs dependencies
+        run: pip install mkdocs mkdocs-material
+
+      - name: Build docs (strict)
+        run: mkdocs build --strict
