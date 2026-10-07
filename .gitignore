@@ -3,3 +3,6 @@ __pycache__/
 .benchmarks/
 site/
 
+# branch-guard session counter (machine-local)
+.claude/guard-session-counts
+.claude/guard-session-counts.lock
