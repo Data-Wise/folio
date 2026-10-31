@@ -47,3 +47,30 @@ See `tasks/todo.md`. Phases: Foundation (T1-T2), Rewrite (T3-T7), Close-out (T8)
 2. **`docs:help`:** it deliberately documents any command, including craft's (its Purpose says "one command to document any command"), so examples that name existing craft commands (`/craft:check`, `/craft:docs:update`) stay. Only the `git:worktree` example (command gone) and the Related line (`docs:sync`, `docs:guide`, `docs:check` are folio's own) change. T6 shrinks to those lines.
 3. **Craft command list:** a pinned `tests/data/craft_commands.txt` recording the craft commit it came from and the one-line refresh command. Reason: folio's tests cannot read another repo's tree.
 4. **Process:** worktree `~/.git-worktrees/folio/feature-craft-ref-cleanup`, branch `feature/craft-ref-cleanup` off `origin/dev`. No PR until the author asks; no merge without asking.
+
+## T2: mapping of dead references (for author approval)
+
+Measured by `python3 tests/test_references.py` at folio `dev` 272fa3c: 30 dead `/craft:` commands (76 occurrences) and 5 dead `/folio:` names (9 occurrences). Targets were chosen from the command bodies (`docs:site` has `--preview`, `--deploy`, `--validate`; `docs:check` reports links, staleness, navigation and a Mermaid health score; `docs:sync` states it replaced `analyze` and `done`; craft still owns `docs:update [feature]`, `docs:changelog` and `site:deploy`).
+
+| Dead reference (occurrences) | Action | Target |
+|---|---|---|
+| `/craft:docs:check`, `docs:guide`, `docs:sync` (1 each, `help.md:208`) | prefix fix | `/folio:docs:check`, `/folio:docs:guide`, `/folio:docs:sync` |
+| `/craft:docs:analyze` (6) | retarget | `/folio:docs:sync` (classification was merged into it) |
+| `/craft:docs:validate` (2) | retarget | `/folio:docs:check` for `site.md:304`; `api.md:246` (validate the generated spec): drop the line unless T7 finds a folio check for OpenAPI |
+| `/craft:docs:feature` (2) | retarget | `/craft:docs:update "<feature>"` (craft keeps `update [feature]`) |
+| `/folio:docs:update` (5, `sync.md`) | retarget | `/craft:docs:update` (folio does not ship it) |
+| `/craft:site:check` (6), `/craft:site:status` (8) | retarget | `/folio:docs:check` (links, navigation, Mermaid health score) |
+| `/craft:site:preview` (3) | retarget | `/folio:docs:site --preview` |
+| `/craft:site:update` (4) | retarget | `/folio:docs:site` |
+| `/craft:site:publish` (6) | retarget | `/craft:site:deploy` (still in craft; `docs:site --deploy` calls it) |
+| `/craft:site:build` (7) | replace | the plain command `mkdocs build --strict` |
+| `/craft:git:worktree` (5), `git:clean` (3), `git:status` (1) | replace | the plain git commands (`git worktree add`, `git branch -d`, `git status`); drop table rows that only advertise them |
+| `/craft:site:progress` (3) | remove | no equivalent in either plugin |
+| `/craft:site:add`, `nav`, `audit`, `consolidate`, `create`, `init`, `theme` (2, 4, 3, 2, 1, 1, 1) | remove | no executor exists; in `prompt.md` the prompts are used manually |
+| `/craft:docs:nav-update` (3) | reword as history | it appears as the title of a salvaged-detail note and the skill's mode list |
+| `/folio:docs:check-links` (1), `/folio:docs:analyze` (1), `/folio:docs:done` (1) | keep as history | "retired" notes in `check.md:337` and `sync.md:439-440`; stay on the allowlist |
+| `/folio:docs:validate` (1, `mermaid-linter/SKILL.md:384`) | retarget | `/folio:docs:check` |
+
+Two lists in `skills/docs/site-management/` are history, not instructions: its "consolidates the following commands (removed in v3.0.0)" paragraph and `references/update.md` / `nav-update.md` titles. T3 and T4 reword them to plain text ("the retired craft site commands: init, create, ...") so the slash form no longer matches, instead of allowlisting them. That makes T3 smaller than planned.
+
+Approval needed: this table (author), especially the `site:build` to plain `mkdocs build --strict` and the removals.

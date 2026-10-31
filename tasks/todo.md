@@ -8,7 +8,7 @@ Branch for all work: a `feature/*` worktree off `dev` in folio (not created). Ga
   - Acceptance: fails today listing the dead occurrences (measured: 85 in 22 files = 76 craft refs in 21 files + 9 refs to folio commands that do not exist, in 4 files; 58 distinct file/reference pairs); passes when a path-scoped allowlist covers them; a planted `/craft:site:nothing` and `/folio:docs:nothing` each make it fail.
   - Verify: run it before and after planting; the count printed equals 76.
   - Depends on: none.
-- [ ] **T2 (XS) Decide the mapping.** Read `commands/docs/site.md`, `website.md`, `lint.md`; write the old-to-new table in `tasks/plan.md`. Open questions 1 and 2 are decided in `tasks/plan.md`.
+- [x] **T2 (XS) Decide the mapping (drafted; author approval pending).** Read `commands/docs/site.md`, `website.md`, `lint.md`; write the old-to-new table in `tasks/plan.md`. Open questions 1 and 2 are decided in `tasks/plan.md`.
   - Acceptance: every one of the 30 distinct dead commands has a target (folio command, or "remove").
   - Depends on: T1.
 
