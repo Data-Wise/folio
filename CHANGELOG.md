@@ -5,6 +5,19 @@ All notable changes to the folio plugin will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- 85 citations of commands that no longer exist (76 `/craft:` references in 21 files, 9
+  `/folio:` references in 4 files) now point to the folio or craft command that does the job,
+  to a plain command, or are written as history (#24).
+
+### Added
+
+- `tests/test_references.py` fails when a command or skill cites a `/craft:` or `/folio:` command
+  that does not resolve; craft names are checked against the pinned `tests/data/craft_commands.txt` (#24).
+
 ## [1.0.0] - 2026-07-16
 
 First stable release. folio was extracted from craft's docs-authoring surface via

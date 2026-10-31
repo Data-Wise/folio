@@ -5,8 +5,8 @@ Docs-authoring toolkit plugin for Claude Code. Extracted from craft in the v4.0.
 
 ## Surface (target at v1.0.0)
 
-**≈15 commands · 6 agents · 6 skills.** Commands under `/folio:docs:*`; discovery via
-`/folio:hub`. folio owns docs AUTHORING; craft keeps release-plumbing docs
+**17 commands (15 under `/folio:docs:*`, plus `/folio:hub` and `/folio:do`) · 6 agents · 6 skills.**
+Discovery via `/folio:hub`. folio owns docs AUTHORING; craft keeps release-plumbing docs
 (`/craft:docs:update`, `/craft:docs:changelog`) — the caller-based cut. No cross-plugin
 dispatch in either direction.
 
@@ -34,6 +34,7 @@ see the global `~/.claude/CLAUDE.md` for the full rules.
 |---|---|
 | Full suite | `python3 -m pytest tests/` |
 | Counts | `./scripts/validate-counts.sh` (keys on SKILL.md only; floors 15/6/6) |
+| References | `tests/test_references.py` (every `/craft:` and `/folio:` citation resolves; craft names come from the pinned `tests/data/craft_commands.txt`, refresh it when craft's command list changes) |
 | Site | `mkdocs build --strict` (also enforced automatically by `ci.yml` on every PR, not just at release) |
 
 Run all three in the tree a PR ships from, before opening it.
