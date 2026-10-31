@@ -334,7 +334,7 @@ Exit code: 1
 
 ## .linkcheck-ignore Support
 
-Absorbed from the retired `/folio:docs:check-links` command (folded here 2026-07 — this file now
+Absorbed from the retired folio `docs:check-links` command (folded here 2026-07 — this file now
 owns the full links story; the standalone command was redundant with this one).
 
 Ignore expected broken links via a `.linkcheck-ignore` file in the project root — document known
@@ -479,7 +479,7 @@ docs/guide/setup.md:15:5: [missing.md](missing.md) → File not found
 
 ## See Also
 
-- `/craft:site:check` - Site validation
+- `/folio:docs:site --validate` - Site validation
 - Template: `templates/dry-run-pattern.md`
 - `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits

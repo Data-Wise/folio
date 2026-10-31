@@ -43,7 +43,7 @@ First, gather intelligence about the feature:
 │ Phase 1/7: ANALYZING FEATURE                                 │
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
-│ Running /craft:docs:analyze "session tracking"...            │
+│ Running /folio:docs:sync "session tracking"...               │
 │                                                              │
 │ ✓ Found 5 CLI commands                                       │
 │ ✓ Found 2 hooks                                              │
@@ -55,7 +55,7 @@ First, gather intelligence about the feature:
 
 **Actions:**
 
-- Run `/craft:docs:analyze` internally
+- Run `/folio:docs:sync` internally
 - Extract feature scope
 - Determine what to generate
 
@@ -432,7 +432,7 @@ sequenceDiagram
 
 **Uses these commands internally:**
 
-- `/craft:docs:analyze` - Feature classification
+- `/folio:docs:sync` - Feature classification
 - `/folio:docs:demo` - VHS tape generation
 - `/folio:docs:mermaid` - Diagram templates
 - `nav-sync` skill - Navigation updates

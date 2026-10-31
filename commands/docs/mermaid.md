@@ -537,7 +537,7 @@ graph TB
 
 - `/folio:docs:generate diagram` - Routes to mermaid-expert agent
 - `/folio:docs:check` - Phase 5: Mermaid Validation (health score)
-- `/craft:site:status` - Validates Mermaid configuration
+- `/folio:docs:check` - Validates Mermaid configuration (Mermaid health score)
 
 **Uses skill:**
 

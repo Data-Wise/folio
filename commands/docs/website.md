@@ -708,7 +708,7 @@ Show comprehensive report:
 **Works with existing craft commands:**
 
 - `/craft:docs:update` - Can call `--website-mode` for enhancements
-- `/craft:site:status` - Shows ADHD score in output
+- `/folio:docs:check` - Reports the health score
 - `/folio:docs:check` - Validates website enhancements
 
 **Uses these internal functions:**
@@ -784,7 +784,7 @@ After this command works:
 1. **Phase 2 implementation** - Structure enhancements
 2. **Phase 3 implementation** - Polish & mobile
 3. **`/craft:docs:update --website-mode`** - Integration
-4. **`/craft:site:status` ADHD scoring** - Show score in output
+4. **`/folio:docs:check` health scoring** - Show score in output
 
 ## See Also
 

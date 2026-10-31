@@ -1,17 +1,3 @@
 # Known unresolved references, as `path :: reference` (see tests/test_references.py).
 # Baseline taken at folio dev 272fa3c against craft 5521e9cf3 (folio#24); tasks T3-T7 delete
 # entries as each file is fixed. What remains at the end should be retired-command notes only.
-commands/docs/api.md :: /craft:docs:validate
-commands/docs/check.md :: /craft:site:check
-commands/docs/check.md :: /folio:docs:check-links
-commands/docs/guide.md :: /craft:docs:analyze
-commands/docs/help.md :: /craft:docs:check
-commands/docs/help.md :: /craft:docs:guide
-commands/docs/help.md :: /craft:docs:sync
-commands/docs/help.md :: /craft:git:worktree
-commands/docs/lint.md :: /craft:site:check
-commands/docs/mermaid.md :: /craft:site:status
-commands/docs/sync.md :: /folio:docs:analyze
-commands/docs/sync.md :: /folio:docs:done
-commands/docs/sync.md :: /folio:docs:update
-commands/docs/website.md :: /craft:site:status
