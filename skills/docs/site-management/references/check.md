@@ -1,10 +1,10 @@
 ---
-title: Check — salvaged detail (from deprecated /craft:site:check)
+title: Check — salvaged detail (from retired craft site:check command)
 ---
 
 # Check — additional detail
 
-Content from the deprecated `/craft:site:check` command not already covered by the skill's
+Content from the retired craft `site:check` command not already covered by the skill's
 "check" section.
 
 ## Pre-build lint phase (run before link/structure checks)

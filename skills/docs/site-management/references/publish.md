@@ -1,10 +1,10 @@
 ---
-title: Publish — salvaged detail (from deprecated /craft:site:publish)
+title: Publish — salvaged detail (from retired craft site:publish command)
 ---
 
 # Publish — additional detail
 
-Content from the deprecated `/craft:site:publish` command not already covered by the skill's
+Content from the retired craft `site:publish` command not already covered by the skill's
 "publish" section (Phase 3 — Ship). The skill states the two-stage draft→production intent; this
 file preserves the exact teaching-mode safety workflow, output formats, config schema, and error
 handling.
@@ -88,7 +88,7 @@ git reset --hard production-backup-<timestamp>   # backup branch preserved
 ✅ PUBLISH SUCCESSFUL
 🌐 Live Site: https://data-wise.github.io/stat-440/
 📊 Changes Published: 8 files, +335 / -14
-💡 Next: review live site · /craft:git:clean · continue on draft
+💡 Next: review live site · continue on draft
 ⏱ Deployment may take 1-2 minutes to propagate.
 ```
 

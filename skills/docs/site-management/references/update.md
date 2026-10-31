@@ -1,10 +1,10 @@
 ---
-title: Update — salvaged detail (from deprecated /craft:site:update)
+title: Update — salvaged detail (from retired craft site:update command)
 ---
 
 # Update — additional detail
 
-Content from the deprecated `/craft:site:update` command not already covered by the skill's
+Content from the retired craft `site:update` command not already covered by the skill's
 "update" section (Phase 3 — Ship). The skill states the detect→classify→update→modes intent;
 this file preserves the change-detection matrix, the badge-synchronization step, and the exact
 output formats.

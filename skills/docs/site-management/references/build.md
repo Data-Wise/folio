@@ -1,10 +1,10 @@
 ---
-title: Build — salvaged detail (from deprecated /craft:site:build)
+title: Build — salvaged detail (from retired craft site:build command)
 ---
 
 # Build — additional detail
 
-Content from the deprecated `/craft:site:build` command not already covered by the skill's
+Content from the retired craft `site:build` command not already covered by the skill's
 "build" section.
 
 ## Teaching-mode before/after output (exact format)
