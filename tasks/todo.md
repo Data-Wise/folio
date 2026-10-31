@@ -4,8 +4,8 @@ Branch for all work: a `feature/*` worktree off `dev` in folio (not created). Ga
 
 ## Phase 1: Foundation
 
-- [ ] **T1 (S) Resolver test with allowlist.** Files: `tests/test_references.py`, `tests/data/craft_commands.txt`.
-  - Acceptance: fails today listing exactly the 76 dead occurrences in 21 files; passes when a path-scoped allowlist covers them; a planted `/craft:site:nothing` and `/folio:docs:nothing` each make it fail.
+- [x] **T1 (S) Resolver test with allowlist.** Files: `tests/test_references.py`, `tests/data/craft_commands.txt`.
+  - Acceptance: fails today listing the dead occurrences (measured: 85 in 22 files = 76 craft refs in 21 files + 9 refs to folio commands that do not exist, in 4 files; 58 distinct file/reference pairs); passes when a path-scoped allowlist covers them; a planted `/craft:site:nothing` and `/folio:docs:nothing` each make it fail.
   - Verify: run it before and after planting; the count printed equals 76.
   - Depends on: none.
 - [ ] **T2 (XS) Decide the mapping.** Read `commands/docs/site.md`, `website.md`, `lint.md`; write the old-to-new table in `tasks/plan.md`. Open questions 1 and 2 are decided in `tasks/plan.md`.
