@@ -277,8 +277,6 @@ Run after merging a feature PR, before the next release.
 
 ## Deprecates
 
-This skill consolidates the following commands (kept functional through one minor release, removed in v3.0.0):
+This skill consolidates the craft `site:*` command family, which craft no longer ships: `site:init`, `site:create`, `site:theme`, `site:build`, `site:preview`, `site:check`, `site:audit`, `site:consolidate`, `site:status`, `site:progress`, `site:publish` and `site:update`. Their current homes are `/folio:docs:site` (update, `--preview`, `--deploy`, `--validate`), `/folio:docs:check` (health, links, navigation) and `/craft:site:deploy` (deployment), with `mkdocs build --strict` for a plain build.
 
-`/craft:site:init`, `/craft:site:create`, `/craft:site:theme`, `/craft:site:build`, `/craft:site:preview`, `/craft:site:check`, `/craft:site:audit`, `/craft:site:consolidate`, `/craft:site:status`, `/craft:site:progress`, `/craft:site:deploy`, `/craft:site:publish`, `/craft:site:update`.
-
-Excluded (own skill): `/craft:site:add`, `/craft:site:nav` → `skills/docs/navigation/`.
+Excluded (own skill): the retired `site:add` and `site:nav` commands, now covered by `skills/docs/navigation/`.

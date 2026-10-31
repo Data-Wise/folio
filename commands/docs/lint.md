@@ -739,7 +739,7 @@ docs/guide/setup.md:45:30: MD009 - Trailing spaces (auto-fixable)
 
 **Works with:**
 
-- `/craft:site:check` - Site validation (calls lint before build)
+- `/folio:docs:site --validate` - Site validation
 - `/craft:ci:validate` - CI pipeline validation
 
 ## CI Pipeline Usage
@@ -856,7 +856,7 @@ npx markdownlint-cli2 --help
 
 - `/folio:docs:check` - Full documentation health check
 - `/craft:code:lint` - Code linting (delegates markdown here)
-- `/craft:site:check` - Site validation (includes lint step)
+- `/folio:docs:site --validate` - Site validation
 - Template: `templates/dry-run-pattern.md`
 - `/folio:docs:api` - OpenAPI/Swagger documentation generator
 - `/craft:docs:changelog` - Auto-update CHANGELOG.md based on git commits

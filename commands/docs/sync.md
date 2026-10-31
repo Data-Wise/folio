@@ -271,7 +271,7 @@ find docs/ -name "*.md" -mtime +30
 │   Phase 7: 3 stale counts                                   │
 │   Phase 8: 2 undocumented commands                          │
 │                                                             │
-│ Suggested: /folio:docs:update "session tracking"            │
+│ Suggested: /craft:docs:update "session tracking"            │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -343,7 +343,7 @@ find docs/ -name "*.md" -mtime +30
 │                                                             │
 │ RECOMMENDED ACTIONS:                                        │
 │                                                             │
-│   1. /folio:docs:update "session tracking"                  │
+│   1. /craft:docs:update "session tracking"                  │
 │      (generates guide, refcard, demo automatically)         │
 │                                                             │
 │   2. Review stale docs manually                             │
@@ -374,7 +374,7 @@ find docs/ -name "*.md" -mtime +30
     { "path": "docs/guide/auth.md", "days": 45, "code_changed": true },
     { "path": "docs/reference/api.md", "days": 32, "code_changed": true }
   ],
-  "suggested_action": "/folio:docs:update \"session tracking\""
+  "suggested_action": "/craft:docs:update \"session tracking\""
 }
 ```
 
@@ -432,16 +432,16 @@ find docs/ -name "*.md" -mtime +30
 
 **Called by:**
 
-- `/folio:docs:update` - First step of update cycle
+- `/craft:docs:update` - First step of update cycle
 
 **Replaces:**
 
-- `/folio:docs:analyze` - Classification merged into sync
-- `/folio:docs:done` - Lightweight mode is now the default
+- `docs:analyze` (retired) - Classification merged into sync
+- `docs:done` (retired) - Lightweight mode is now the default
 
 **Works with:**
 
-- `/folio:docs:update` - Run sync first, then update generates
+- `/craft:docs:update` - Run sync first, then update generates
 - `/folio:docs:check` - Sync detects, check validates
 
 ## ADHD-Friendly Design

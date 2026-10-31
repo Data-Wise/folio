@@ -24,7 +24,7 @@ Generate comprehensive help documentation for commands using ADHD-friendly templ
 # Generate help for a specific command
 /folio:docs:help "check"              # Document /craft:check
 /folio:docs:help "docs:update"        # Document /craft:docs:update
-/folio:docs:help "git:worktree"       # Document /craft:git:worktree
+/folio:docs:help "site:deploy"        # Document /craft:site:deploy
 
 # Generate help for multiple commands
 /folio:docs:help "docs:*"             # All docs commands
@@ -205,7 +205,7 @@ Generated help page follows this structure:
 
 - [Tutorial: Documentation Workflow](../tutorials/docs-workflow.md)
 - [Workflow: Feature Documentation](../workflows/feature-docs.md)
-- Related: /craft:docs:sync, /craft:docs:guide, /craft:docs:check
+- Related: /folio:docs:sync, /folio:docs:guide, /folio:docs:check
 
 ````
 

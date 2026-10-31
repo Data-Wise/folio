@@ -305,10 +305,6 @@ PROMPT-DOCS-EDIT-[filename].md # edit
 │    Copy prompt to new Claude session for docs work          │
 │    Or use with: claude -p "$(cat PROMPT-DOCS-MAINTENANCE.md)"│
 │                                                             │
-│ 🔗 Related:                                                 │
-│    /craft:site:audit      ← run audit now                   │
-│    /craft:site:nav        ← reorganize now                  │
-│                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -320,11 +316,7 @@ PROMPT-DOCS-EDIT-[filename].md # edit
 - `/craft:docs:changelog` - Update changelog
 - `/folio:docs:prompt` - Generate prompts ← this command
 
-**Works with site commands:**
-
-- `/craft:site:nav` - Use reorganize prompt
-- `/craft:site:audit` - Use audit prompt
-- `/craft:site:consolidate` - After audit identifies duplicates
+**Works with site prompts:** the reorganize, audit and consolidate prompts are used by hand; the craft `site:nav`, `site:audit` and `site:consolidate` commands that ran them are retired.
 
 **Uses:**
 

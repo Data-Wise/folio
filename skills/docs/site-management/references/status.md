@@ -1,10 +1,10 @@
 ---
-title: Status — salvaged detail (from deprecated /craft:site:status)
+title: Status — salvaged detail (from retired craft site:status command)
 ---
 
 # Status — additional detail
 
-Content from the deprecated `/craft:site:status` command not already covered by the skill's
+Content from the retired craft `site:status` command not already covered by the skill's
 "status" section (Phase 2 — Author). The skill lists what the dashboard shows; this file
 preserves the exact dashboard formats, the health-score model (incl. Mermaid scoring), and the
 freshness thresholds.
@@ -65,7 +65,7 @@ SITE HEALTH: 90/100 █████████░
 
 Detailed validation report: BUILD VALIDATION · NAVIGATION CHECK · LINK VALIDATION (per-file) ·
 CONTENT ANALYSIS · MERMAID DIAGRAMS (config + per-diagram syntax) · DESIGN CONSISTENCY · SUMMARY
-(passed / warnings / errors) + a `/craft:site:update` recommendation.
+(passed / warnings / errors) + a `/folio:docs:site` recommendation.
 
 ## Status indicators
 

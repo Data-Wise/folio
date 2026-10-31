@@ -1,10 +1,10 @@
 ---
-title: nav-update — salvaged detail (from deprecated /craft:docs:nav-update)
+title: nav-update — salvaged detail (from retired craft docs:nav-update command)
 ---
 
 # nav-update — additional detail
 
-Content from the deprecated `/craft:docs:nav-update` command not already covered by the skill's
+Content from the retired craft `docs:nav-update` command not already covered by the skill's
 Mode 1 (Sync). The skill covers the sync algorithm, title inference, section detection, and orphan
 handling; this file preserves the exact multi-section output formats those steps produce.
 

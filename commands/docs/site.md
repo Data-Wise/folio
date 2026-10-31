@@ -301,14 +301,14 @@ export default {
 This command focuses on **website docs only**. It:
 
 - Calls the `nav-sync` skill for navigation
-- Calls `/craft:docs:validate` for link checking
+- Calls `/folio:docs:check` for link checking
 - Calls `/craft:site:deploy` for deployment (if --deploy)
 
 **Related commands:**
 
 - `/craft:docs:update` - All docs including non-website
-- `/craft:docs:feature` - After adding features
-- `/craft:site:preview` - Just preview, no updates
+- `/craft:docs:update "<feature>"` - After adding features
+- `/folio:docs:site --preview` - Just preview, no updates
 - `/craft:site:deploy` - Just deploy, no updates
 
 ## See Also

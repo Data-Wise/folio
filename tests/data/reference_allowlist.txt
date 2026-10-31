@@ -1,0 +1,3 @@
+# Known unresolved references, as `path :: reference` (see tests/test_references.py).
+# Baseline taken at folio dev 272fa3c against craft 5521e9cf3 (folio#24); tasks T3-T7 delete
+# entries as each file is fixed. What remains at the end should be retired-command notes only.

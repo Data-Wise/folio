@@ -380,15 +380,12 @@ Recommendations:
 **Called by:**
 
 - `/folio:docs:check` - Phase 5: Mermaid Validation
-- `/craft:site:status --check` - Site health check
-- `/folio:docs:validate` - Documentation validation
 - `/craft:check commit` - Pre-commit checks
 - `/craft:site:deploy` - Health score gate (>= 80)
 
 **Related:**
 
 - `/folio:docs:mermaid` - Diagram templates, NL creation, MCP validation
-- `/craft:site:status` - Quick Mermaid config check
 - `/folio:docs:generate` - Includes Mermaid guidelines
 - `mermaid-expert` agent - MCP-powered diagram generation
 

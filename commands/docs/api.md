@@ -243,7 +243,6 @@ Uses skills:
 Works with:
 
 - `/folio:docs:generate` - Part of full documentation
-- `/craft:docs:validate` - Validate generated spec
 - `/craft:code:deps-audit` - Check API dependencies
 
 ## See Also

@@ -113,8 +113,8 @@ SPEC-auth-2026-01-14.md
 │   • Release process                                         │
 │                                                             │
 │ Related commands:                                           │
-│   • /craft:git:worktree                                     │
-│   • /craft:git:clean                                        │
+│   • git worktree add                                        │
+│   • git branch -d                                           │
 │   • /commit                                                 │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
@@ -241,7 +241,7 @@ git pull origin dev
 ### Step 2: Create Worktree
 
 ```bash
-/craft:git:worktree feature/my-feature
+git worktree add ~/.git-worktrees/project/my-feature -b feature/my-feature
 cd ~/.git-worktrees/project/my-feature
 ```
 
@@ -255,7 +255,7 @@ cd ~/.git-worktrees/project/my-feature
 
 ```bash
 git checkout main
-/craft:git:worktree hotfix/fix-name
+git worktree add ~/.git-worktrees/project/fix-name -b hotfix/fix-name
 # Fix, test, PR to main
 ```
 
@@ -274,8 +274,8 @@ git checkout main
 
 | Action | Command |
 |--------|---------|
-| Create worktree | `/craft:git:worktree feature/name` |
-| Clean branches | `/craft:git:clean` |
+| Create worktree | `git worktree add <path> -b feature/name` |
+| Clean branches | `git branch -d feature/name` |
 | Create PR | `gh pr create --base dev` |
 
 ```
