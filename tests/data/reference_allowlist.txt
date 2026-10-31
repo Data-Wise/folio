@@ -28,13 +28,3 @@ commands/docs/sync.md :: /folio:docs:update
 commands/docs/website.md :: /craft:site:status
 commands/docs/workflow.md :: /craft:git:clean
 commands/docs/workflow.md :: /craft:git:worktree
-skills/docs/doc-classifier/SKILL.md :: /craft:docs:analyze
-skills/docs/doc-classifier/SKILL.md :: /craft:docs:feature
-skills/docs/mermaid-linter/SKILL.md :: /craft:site:status
-skills/docs/mermaid-linter/SKILL.md :: /folio:docs:validate
-skills/docs/navigation/SKILL.md :: /craft:docs:nav-update
-skills/docs/navigation/SKILL.md :: /craft:site:add
-skills/docs/navigation/SKILL.md :: /craft:site:build
-skills/docs/navigation/SKILL.md :: /craft:site:nav
-skills/docs/navigation/SKILL.md :: /craft:site:preview
-skills/docs/navigation/references/nav-update.md :: /craft:docs:nav-update

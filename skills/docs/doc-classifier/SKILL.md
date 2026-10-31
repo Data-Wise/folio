@@ -101,7 +101,7 @@ grep -E "Step [0-9]" docs/**/*.md
 
 ## Usage Examples
 
-### From /craft:docs:analyze
+### From /folio:docs:sync
 
 ```python
 # Internal call
@@ -125,10 +125,9 @@ if classification["guide"]["needed"]:
 
 **Used by:**
 
-- `/craft:docs:analyze` - Main classification command
+- `/folio:docs:sync` - Main classification command (replaced the retired craft `docs:analyze`)
 - `/folio:docs:guide` - Determine what to generate
-- `/craft:docs:feature` - Smart detection enhancement
-- `/craft:docs:update` - Selective updates
+- `/craft:docs:update "<feature>"` - Smart detection enhancement and selective updates
 
 **Complements:**
 

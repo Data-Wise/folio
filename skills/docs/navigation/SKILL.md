@@ -11,9 +11,9 @@ Keep mkdocs.yml navigation aligned with the docs/ directory: detect drift, scaff
 
 This skill consolidates three previously separate commands:
 
-- `/craft:docs:nav-update` (deprecated in craft; consolidated into this skill) — directory-driven sync
-- `/craft:site:add` — new page + auto-nav
-- `/craft:site:nav` — reorganization (analyze, ADHD, apply, preview)
+- craft `docs:nav-update` (retired; consolidated into this skill) — directory-driven sync
+- craft `site:add` (retired) — new page + auto-nav
+- craft `site:nav` (retired) — reorganization (analyze, ADHD, apply, preview)
 
 Historically `docs/*` commands targeted generic docs and `site/*` commands targeted the mkdocs site, but in practice all three operated on mkdocs.yml and `docs/`. Merging them under `skills/docs/navigation/` removes the artificial split and gives one entry point for every navigation concern. Page-content generation (templates) is still part of the "add" path; other doc-type generators (quickstart, tutorial, guide) live in sibling skills.
 
@@ -101,7 +101,7 @@ NAV SYNC RESULT
   - 1 entry removed
   ~ 0 reorganized
 File written: mkdocs.yml
-Next: mkdocs serve  |  /craft:site:preview
+Next: mkdocs serve  |  /folio:docs:site --preview
 ```
 
 Or, for `add`:
@@ -127,7 +127,7 @@ PAGE CREATED
 **Used by:**
 
 - `/folio:docs:check` — validates nav alignment as part of doc health.
-- `/craft:site:build` — should run sync before build to avoid missing-page warnings.
+- `mkdocs build --strict` — should run sync before build to avoid missing-page warnings.
 - `/folio:docs:sync` — invokes nav-sync as a post-step after doc generation.
 
 ## Validation
