@@ -216,7 +216,7 @@ Convert existing `.cast` recordings to optimized `.gif` files.
 
 **Use asciinema (default) for:**
 
-- Claude Code plugin commands (e.g., `/craft:site:build`)
+- Claude Code plugin commands (e.g., `/craft:site:deploy --dry-run`)
 - Bash CLI tools with real output
 - When you want to record actual execution
 - When accuracy is critical
@@ -642,9 +642,9 @@ Create a recording guide (not executed, just instructions):
 # Recording guide saved to: docs/demos/[feature-name]-recording-guide.md
 #
 # Commands to run:
-# 1. /craft:site:build
-# 2. /craft:site:progress
-# 3. /craft:site:publish --dry-run
+# 1. mkdocs build --strict
+# 2. /folio:docs:check
+# 3. /craft:site:deploy --dry-run
 #
 # Total estimated time: ~45 seconds
 ```
@@ -772,11 +772,11 @@ fi
 asciinema rec docs/demos/teaching-workflow.cast
 
 # In Claude Code, run:
-# /craft:git:status
-# /craft:site:build
-# /craft:site:progress
-# /craft:site:publish --dry-run
-# /craft:site:publish
+# git status
+# mkdocs build --strict
+# /folio:docs:check
+# /craft:site:deploy --dry-run
+# /craft:site:deploy
 # Ctrl+D to stop
 
 # 3. Preview
@@ -871,7 +871,7 @@ Sleep 0.5s
 
 **Related commands:**
 
-- `/craft:docs:analyze` - Recommends when GIF is needed
+- `/folio:docs:sync` - Recommends when GIF is needed
 - `/folio:docs:guide` - Embeds GIF in generated guides
 - `/folio:docs:mermaid` - Complementary visual docs
 
